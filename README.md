@@ -242,14 +242,14 @@ The semiconductor supply chain is a multi-step process that turns raw silicon in
 | **4. Board Assembly & Test : Multiple packaged ICs are mounted and board-level validation** <br> <ul> <li>**Input**: Packaged ICs, test programs, ATE systems</li> **Output**: Qualified ICs, binned by performance. Yield improvement and binning are critical for profitability.</li> <li> Examples: ASE, Powertech, Amkor, UTAC</li> </ul> |
 | **5. System Integration & Distribution** <br> <ul> <li>**Input**: Packaged, tested ICs; PCBs; passive components </li> <li> **Process**: SMT assembly, system-level integration, validation </li> <li>**Output**: Complete electronic systems (e.g., smartphones, servers) </li> <li>Examples: OEMs Original Equipment Manufacturer (Apple, Cisco), ODMs Original Design Manufacturer (Foxconn, Pegatron), EMS Electronics Manufacturing Services (Flex, Jabil)</li> </ul> |
 
-| ![Semiconductor_Supply_Chain](./docs/images/M2_L1_1.png) |
+| ![Semiconductor_Supply_Chain](Mod-2/Mod-2/Mod-2.1.png) |
 |:---|
 
 #### 2.1.2 - Introduction to a Package Manufacturing Unit (ATMP)
 The ATMP process involves four core activities: Assembly, Testing, Marking, and Packaging.
 The ATMPs could be OSATs (like ASE, Amkor, TATA etc.) or in-house ATMPs of IDMs (like Intel, Samsung, Micron) or Foundries (like TSMC, Samsung Foundry)
 
-| **Typical layout of an ATMP:** <br> ![Typical_ATMP_Layout](./docs/images/M2_L1_2.png) |
+| **Typical layout of an ATMP:** <br> ![Typical_ATMP_Layout](Mod-2/Mod-2/Mod-2.2.png) |
 |:---|
 
 **1. Material Preparation and Storage:**
@@ -275,7 +275,7 @@ The ATMPs could be OSATs (like ASE, Amkor, TATA etc.) or in-house ATMPs of IDMs 
 
 This section explains the wafer preparation process inside an ISO Class 7 cleanroom of an ATMP (Assembly, Testing, Marking, and Packaging) facility. 
 
-| ![Wafer_Grinding_Dicing](./docs/images/M2_L2_1.png) |
+| ![Wafer_Grinding_Dicing](Mod-2/Mod-2/Mod-2.3.png) |
 |:---|
 
 **1. Incoming Wafer Carrier:** Wafers arrive in protective carriers to prevent contamination before processing.
@@ -294,7 +294,7 @@ This section explains the wafer preparation process inside an ISO Class 7 cleanr
 
 ### 2.3 - Wire Bond Packaging - Die Attach To Molding
 
-| ![Wire_Bond_Packaging](./docs/images/M2_L3_1.png) |
+| ![Wire_Bond_Packaging](Mod-2/Mod-2/Mod-2.4.png) |
 |:---|
 
 **1. Die Attach:**
@@ -327,7 +327,7 @@ Gold or aluminum wires are bonded between the die and the substrate pads using t
 
 Flip chip packaging enhances electrical performance and I/O density by mounting the die face-down on the substrate.
 
-| ![FlipChip_Packaging](./docs/images/M2_L4_1.png) |
+| ![FlipChip_Packaging](Mod-2/Mod-2/Mod-2.5.png) |
 |:---|
 
 **1. Bump Formation on Silicon (Si):**
@@ -370,7 +370,7 @@ There are two main types of WLP:
 
 **<U>FO-WLP Process</U>**
 
-| ![WLP](./docs/images/M2_L5_1.png) |
+| ![WLP](Mod-2/Mod-2/Mod-2.6.png) |
 |:---|
 
 **1. Reconstitution Process:**
