@@ -492,7 +492,7 @@ We will be taking an already available FC-BGA package within the Icepak Toolkit 
 
  **Field Plot Settings** ![AEDT_IcePak_21](Mod-3/Mod-3[Lab-1]/Mod-3.95.png) 
 
- **Field Plot - Top view** ![AEDT_IcePak_22](Mod-3/Mod-3[Lab-1]/Mod-3.96.png) | **Field Plot - Bottom view** ![AEDT_IcePak_23](Mod-3/Mod-3[Lab-1]/Mod-3.97.png) 
+ **Field Plot - Top view** ![AEDT_IcePak_22](Mod-3/Mod-3[Lab-1]/Mod-3.96.png)  **Field Plot - Bottom view** ![AEDT_IcePak_23](Mod-3/Mod-3[Lab-1]/Mod-3.97.png) 
 
 
 _________________________________________________________________________________________________________  
@@ -633,14 +633,12 @@ The main focus of this lab exercise is to build the complete cross-section of a 
   - Set the thickness to 5 microns (0.005mm)
 
 **Die Bond Pad** <br> ![AEDT_Q3D_6.1](Mod-5/Mod-5[Lab-2]/Mod-5.43.png) | ![AEDT_Q3D_5.3](Mod-5/Mod-5[Lab-2]/Mod-5.45.png) 
-|:---|
 
   - Similarly, draw a small rectangle and configure its size to to that of the substrate bond pad (0.2mm x 0.2mm).
   - We will place this Substrate Bind Pad at the co-ordinates (0.2, -0.7, -0.1) so that it sits aligned to the Die bond pad created in the previous step, and also on top of the substrate.
   - Set the substrate bond pad thickness to 10 microns (0.010mm)
 
  **Substrate Bond Pad** <br> ![AEDT_Q3D_6.2](Mod-5/Mod-5[Lab-2]/Mod-5.44.png) | ![AEDT_Q3D_5.3](Mod-5/Mod-5[Lab-2]/Mod-5.46.png) 
-|:---|
 
 ### 5.4 - Wire Bond Creation and Material Assignment
 
