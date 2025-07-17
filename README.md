@@ -309,8 +309,8 @@ ________________________________________________________________________________
 ## 2 - From Wafer to Package: Assembly and Manufacturing Essentials
 This section covers the semiconductor supply chain and provides a detailed look into a package manufacturing unit (**ATMP** – Assembly, Testing, Marking, and Packaging).
 
-### 2.1 - Setting The Stage - Supply Chain And Facilities
-#### 2.1.1 - Semiconductor Supply Chain Overview
+### 2.A - Setting The Stage - Supply Chain And Facilities
+#### 2.A.1 - Semiconductor Supply Chain Overview
 
 | ![Semiconductor_Supply_Chain](Mod-2/Mod-2/Mod-2.1.png) |
 |:---|
@@ -409,7 +409,7 @@ B. Testing Protocols:
 - Final software flashing and validation
 ---
 
-#### 2.1.2 - Introduction to a Package Manufacturing Unit (ATMP)
+#### 2.A.2 - Introduction to a Package Manufacturing Unit (ATMP)
 The ATMP process involves four core activities: Assembly, Testing, Marking, and Packaging.
 The ATMPs could be OSATs (like ASE, Amkor, TATA etc.) or in-house ATMPs of IDMs (like Intel, Samsung, Micron) or Foundries (like TSMC, Samsung Foundry)
 
@@ -429,7 +429,7 @@ The ATMPs could be OSATs (like ASE, Amkor, TATA etc.) or in-house ATMPs of IDMs 
 
 
 
-### 2.2 - Wafer Pre-Preparation - Grinding And Dicing
+### 2.B - Wafer Pre-Preparation - Grinding And Dicing
 
 | ![Wafer_Grinding_Dicing](Mod-2/Mod-2/Mod-2.3.png) |
 |:---|
@@ -493,14 +493,14 @@ A hybrid approach that maximizes accuracy and throughput:
 - Final diced units remain adhered to the tape frame for downstream inspection and packaging.
 ---
 
-# Cleanroom Protocols
+**Cleanroom Protocols:**
 - All processes occur in **ISO Class 6 and 7 cleanrooms**, with stringent particle control.
 - Operators wear full bunny suits and gloves to ensure zero contamination.
 - Equipment includes HEPA-filtered laminar flow stations and ESD-safe tools.
 
 ---
 
-### 2.3 - Wire Bond Packaging - Die Attach To Molding
+### 2.C - Wire Bond Packaging - Die Attach To Molding
 
 | ![Wire_Bond_Packaging](Mod-2/Mod-2/Mod-2.4.png) |
 |:---|
@@ -521,7 +521,7 @@ The table is outlining the cleanroom packaging workflow for wire bond semiconduc
 
 ---
 
-### 2.4 - Flip Chip Assembly - Bump Formation And Underfill
+### 2.D - Flip Chip Assembly - Bump Formation And Underfill
 Flip chip packaging enhances electrical performance and I/O density by mounting the die face-down on the substrate.
 
 | ![FlipChip_Packaging](Mod-2/Mod-2/Mod-2.5.png) |
@@ -542,7 +542,7 @@ Flip chip packaging enhances electrical performance and I/O density by mounting 
 
 
 
-### 2.5 - Wafer Level Packaging And Conclusion
+### 2.E - Wafer Level Packaging And Conclusion
 
 Wafer-Level Packaging (WLP) is a technique where the entire packaging process is done at the wafer level, before dicing and offers smaller size, and lower cost.  
 There are two main types of WLP:
@@ -554,7 +554,7 @@ There are two main types of WLP:
 | ![WLP](Mod-2/Mod-2/Mod-2.6.png) |
 |:---|
 
-## 🧪 Fan-Out Wafer-Level Packaging — Cleanroom Process Flow
+# Fan-Out Wafer-Level Packaging — Cleanroom Process Flow
 
 | **Process Step**            | **Description**                                                                                          |
 |-----------------------------|----------------------------------------------------------------------------------------------------------|
