@@ -401,7 +401,7 @@ We will be taking an already available FC-BGA package within the Icepak Toolkit 
 
   - **Step 1 : Open AEDT and launch Icepak**
 
-| ![AEDT_IcePak_1](Mod-3/Mod-3 [Lab-1]/Mod-3.0.png) |
+| (Mod-3/Mod-3 [Lab-1]/Mod-3.0.png) |
 |:---|
 
   - **Step 2.1 : Create a Flipchip BGA Package**
