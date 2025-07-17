@@ -789,8 +789,6 @@ ________________________________________________________________________________
 
 ## 5 - Package Design and Modeling: Building a Semiconductor Package from Scratch
 
-This is a hands-on lab to design a semiconductor wire bond package from scratch using Ansys Electronics Desktop (AEDT). 
-
 ### 5.A - Introduction to Package Cross-Section Modeling in ANSYS Electronics Desktop (AEDT)
 
 **<U>Package Specifications:</U>**
