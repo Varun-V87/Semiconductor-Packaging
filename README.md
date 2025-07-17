@@ -553,7 +553,7 @@ There are two main types of WLP:
 | ![WLP](Mod-2/Mod-2/Mod-2.6.png) |
 |:---|
 
-# Fan-Out Wafer-Level Packaging — Cleanroom Process Flow
+# Fan-Out Wafer-Level Packaging - Cleanroom Process Flow
 
 | **Process Step**            | **Description**                                                                                          |
 |-----------------------------|----------------------------------------------------------------------------------------------------------|
@@ -601,7 +601,6 @@ ANSYS Electronics Desktop (AEDT) is a multi-physics simulation software that com
 ### 3.C - Material Definitions And Thermal Power Sources
 
   - **Step C.1: Review and modify the material and definition types for the different components of the model.**
-|:---|
 
   - **Step C.2: Add or Assign Source Thermal Model for Die**
     - In "Project Manager" sub-window, expand Thermal section and open the "BGA1_die_source" and configure the thermal condition as shown below:
@@ -712,6 +711,7 @@ Integrated Circuits are tested at multiple points during the manufacturing proce
 
 | ![Package_Testing_3](Mod-4/Mod-4/Mod-4.4.png) |
 |:---|
+
 Burn-in testing aims to detect "Infant Mortality" failures, which occur during the earliest phase of a component’s operational life.
 - These failures are typically caused by manufacturing defects, weak dielectric layers, metallization issues, or contamination.
 - Burn-in stress conditions accelerate these failure mechanisms using controlled environmental extremes (e.g. temperature, power cycling).
@@ -737,6 +737,7 @@ Burn-in testing aims to detect "Infant Mortality" failures, which occur during t
 
 ---
 **Failure Rate vs Time Profile**
+
 The characteristic failure curve during Burn-in resembles the **Bathtub Curve**, composed of three phases:
 
 - **Infant Mortality Region:**  
@@ -797,36 +798,36 @@ This is a hands-on lab to design a semiconductor wire bond package from scratch 
 
 **<U>Package Specifications:</U>**
 **1. Die:**
-Material: Silicon
-Dimensions: 3mm × 3mm
-Thickness: 0.2mm
+- Material: Silicon
+- Dimensions: 3mm × 3mm
+- Thickness: 0.2mm
 
 **2. Substrate:**
-Material: FR4_epoxy
-Dimensions: 5mm × 5mm
-Thickness: -0.5mm
+- Material: FR4_epoxy
+- Dimensions: 5mm × 5mm
+- Thickness: -0.5mm
 
 **3. Die Attach:**
-Material: Modified_epoxy
-Dimensions: 3mm × 3mm
-Thickness: -0.1mm
+- Material: Modified_epoxy
+- Dimensions: 3mm × 3mm
+- Thickness: -0.1mm
 
 **4. Die Bondpad:**
-Material: Copper
-Dimensions: 0.2mm × 0.2mm
-Thickness: 0.005mm
+- Material: Copper
+- Dimensions: 0.2mm × 0.2mm
+- Thickness: 0.005mm
 
 **5. Substrate Bondpad:**
-Material: Copper
-Dimensions: 0.2mm × 0.2mm
+- Material: Copper
+- Dimensions: 0.2mm × 0.2mm
 
 **6. Bond Wire:**
-Material: Gold
-Type: JEDEC 4-point configuration
+- Material: Gold
+- Type: JEDEC 4-point configuration
 
 **7. Mold Compound:**
-Material: Epoxy_kevlar_xy
-Thickness: 1.2mm
+- Material: Epoxy_kevlar_xy
+= Thickness: 1.2mm
 
 
 | ![AEDT_Q3D_1](Mod-5/Mod-5[Lab-2]/Mod-5.0.png) |
@@ -835,7 +836,8 @@ Thickness: 1.2mm
 ### 5.B - Creating the Die and Substrate in AEDT
 
   - **Step B.1: Create the Die Geometry**
-  |  ![AEDT_Q3D_B.1](Mod-5/Mod-5[Lab-2]/Mod-5.13.png) |
+
+|  ![AEDT_Q3D_B.1](Mod-5/Mod-5[Lab-2]/Mod-5.13.png) |
 |:---|
 
 |![AEDT_Q3D_B.2](Mod-5/Mod-5[Lab-2]/Mod-5.15.png) |
@@ -883,7 +885,7 @@ Thickness: 1.2mm
 | ![AEDT_Q3D_C.1](Mod-5/Mod-5[Lab-2]/Mod-5.43.png) |
 |:---|
 
-| ![AEDT_Q3D_C.3](Mod-5/Mod-5[Lab-2]/Mod-5.45.png) 
+| ![AEDT_Q3D_C.3](Mod-5/Mod-5[Lab-2]/Mod-5.45.png) |
 |:---|
 
   - Draw a rectangle of size (0.2mm x 0.2mm) on the substrate bondpad and position at (0.2, -0.7, -0.1) 
