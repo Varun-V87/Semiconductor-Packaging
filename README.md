@@ -424,7 +424,7 @@ We will be taking an already available FC-BGA package within the Icepak Toolkit 
   - **Step 3 : Explore the 3D Package Model Structure in Icepak**
 
 | **Ball Group** <br> ![AEDT_IcePak_8](Mod-3/Mod-3[Lab-1]/Mod-3.4.png) |
-|:---|:---|
+
 | **Substrate** <br> ![AEDT_IcePak_9](Mod-3/Mod-3[Lab-1]/Mod-3.5.png) |
 
 
@@ -444,7 +444,7 @@ We will be taking an already available FC-BGA package within the Icepak Toolkit 
     - Set the thermal condition on the substrate to Fixed Temperatue and the temperature as Ambient.
 
 | Add Source Thermal Model for Substrate <br> ![AEDT_IcePak_14.1](Mod-3/Mod-3[Lab-1]/Mod-3.8.png) |
-|:---|:---|
+
 
   - **Step 6 : Add Thermal monitors for the different components**
     - To add a Thermal monitor to the substrate, right click on the **_Flipchip_BGA1_substrate_** under `Models -> Flipchip_BGA1_Group -> Solids` and then choose `Assign Monitor -> Point...`
@@ -452,7 +452,7 @@ We will be taking an already available FC-BGA package within the Icepak Toolkit 
     - Repeat the same to add thermal monitors for the die and the die-underfill.
 
 | Thermal monitors added <br> ![AEDT_IcePak_16](Mod-3/Mod-3[Lab-1]/Mod-3.9.png) |
-|:---|
+
 
 ### 3.4 - Meshing And Running The Thermal Analysis
 
@@ -465,8 +465,8 @@ We will be taking an already available FC-BGA package within the Icepak Toolkit 
     - Once the mesh is generated, review the quality metrics of the generated mesh such as Face Alignment, Skewness and Volume.
 
 | **Mesh Quality - Face Alignment** ![AEDT_IcePak_17.1](Mod-3/Mod-3[Lab-1]/Mod-3.91.png) | **Mesh Quality - Skewness** ![AEDT_IcePak_17.2](Mod-3/Mod-3[Lab-1]/Mod-3.92.png) |
-|:---|:---|
-| **Mesh Quality - Volume** ![AEDT_IcePak_17.3](Mod-3/Mod-3[Lab-1]/Mod-3.93.png) | |
+
+| **Mesh Quality - Volume** ![AEDT_IcePak_17.3](Mod-3/Mod-3[Lab-1]/Mod-3.93.png) | 
 
   - **Step 8 : Add Thermal Analysis**
     - Under `Project Manager`, right click on `Analysis and then, select Add Analysis Setup` and configure the solver settings as required. (We will choose all default settings for our analysis)
@@ -478,7 +478,7 @@ We will be taking an already available FC-BGA package within the Icepak Toolkit 
     - Ensure all checks are validated successfully
 
 | **Validate the setup** <br> ![AEDT_IcePak_19](Mod-3/Mod-3[Lab-1]/Mod-3.94.png) |
-|:---|
+
 
   - **Step 10: Run the simulation and plot the temperature map**
     - Click on **Analyze All** button in the top ribbon
@@ -491,7 +491,7 @@ We will be taking an already available FC-BGA package within the Icepak Toolkit 
       - Surface Smoothing -> Enable Gaussian Smoothing
 
 | **Field Plot Settings** ![AEDT_IcePak_21](Mod-3/Mod-3[Lab-1]/Mod-3.95.png) |
-|:---|:---|
+
 | **Field Plot - Top view** ![AEDT_IcePak_22](Mod-3/Mod-3[Lab-1]/Mod-3.96.png) | **Field Plot - Bottom view** ![AEDT_IcePak_23](Mod-3/Mod-3[Lab-1]/Mod-3.97.png) |
 
 
