@@ -4,14 +4,13 @@
 Semiconductor packaging is the process of transforming fragile silicon dies into durable, functional components that power real-world electronics. This document explores **why packaging is essential** and how it connects the foundry to final product.
 
 The key functions of a semiconductor package are:
-- **1. Protection**: Shields silicon die from mechanical, thermal, and chemical threats.  
-- **2. Electrical Bridging**: Routes signals between silicon and PCB.  
-- **3. Thermal Management**: Transfers heat away from the die.  
-- **4. Mechanical Integrity**: Provides physical support during system integration.
+ **- Protection**: Shields silicon die from mechanical, thermal, and chemical threats.  
+ **- Electrical Bridging**: Routes signals between silicon and PCB.  
+ **- Thermal Management**: Transfers heat away from the die.  
+ **- Mechanical Integrity**: Provides physical support during system integration.
 
 
 ### 1.A - Introduction To Semiconductor Packaging And Industry Overview
-<br>
 
 | ![Semiconductor_Packaging](Mod-1/Mod-1/Mod-1.2.png) |
 |:---:|
@@ -89,8 +88,7 @@ Selecting the right semiconductor package is a critical step in electronic syste
 ---
  ## How to Choose the Right Package?
 
-**1. Application Type:**  
-- What is the chip used for?  
+**1. Application Type:**    
 - Typical categories:
   - Logic (e.g., microprocessors, controllers)
   - Memory (DRAM, Flash)
@@ -113,7 +111,6 @@ Selecting the right semiconductor package is a critical step in electronic syste
 - Trade-offs between advanced packaging vs. budget limits
 
 **6. Thermal Dissipation:** 
-- Can the package handle the chip’s heat output?  
 - Depends on thermal interface materials and design
 
 
@@ -386,7 +383,7 @@ A. Materials & Tools:
 - Solder paste and reflow ovens
 - Placement robots
 
-B. Key Activities:
+B. Processes:
 - Surface-mount technology (SMT) placement
 - Reflow soldering
 - Functional and in-circuit testing
@@ -736,7 +733,7 @@ Burn-in testing aims to detect "Infant Mortality" failures, which occur during t
    - Devices showing signs of failure during burn-in are automatically marked or removed.
 
 ---
-**Failure Rate vs Time Profile**
+**Failure Rate vs Time Profile:**
 
 The characteristic failure curve during Burn-in resembles the **Bathtub Curve**, composed of three phases:
 
@@ -755,7 +752,7 @@ The characteristic failure curve during Burn-in resembles the **Bathtub Curve**,
 The **observed failure rate curve** is shaped by the cumulative effect of stress exposure and defect activation.
 
 ---
-**Trade-Offs of Burn-in Testing**
+**Trade-Offs of Burn-in Testing:**
 
 - **Advantages**:
   - Filters early failures before shipment
@@ -771,7 +768,7 @@ The **observed failure rate curve** is shaped by the cumulative effect of stress
 
 | ![Package_Testing_4](Mod-4/Mod-4/Mod-4.5.png) |
 |:---|
-**Final Test**- Validates ICs under extreme temperature conditions <br> - Screens for thermal-dependent electrical failures <br> - Ensures reliability before system-level deployment 
+**Final Test** - Validates ICs under extreme temperature conditions <br> - Screens for thermal-dependent electrical failures <br> - Ensures reliability before system-level deployment 
  
 **Final Test - Temperature Corner Verification in IC Testing Workflow**
 
@@ -797,6 +794,7 @@ This is a hands-on lab to design a semiconductor wire bond package from scratch 
 ### 5.A - Introduction to Package Cross-Section Modeling in ANSYS Electronics Desktop (AEDT)
 
 **<U>Package Specifications:</U>**
+
 **1. Die:**
 - Material: Silicon
 - Dimensions: 3mm × 3mm
