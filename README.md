@@ -1,23 +1,7 @@
 # Semiconductor-Packaging
-This GitHub repository documents the [Semiconductor Packaging - Fundamentals of Design and Testing 10-days Workshop](https://www.vlsisystemdesign.com/packaging/) offered by [VSD Corp. Pvt. Ltd.](https://www.vlsisystemdesign.com/about-us/) attended from 4th - 13th July, 2025.  
-
-This workshop covers the complete semiconductor packaging process from basic concepts and the evolution of packaging to advanced 2.5D and 3D architectures. It includes topics like interconnect technologies, RDLs, interposers, assembly steps, and package reliability analysis. We also performed hands-on thermal simulations, package design, and modeling using ANSYS tools.
-<br/>
-
-**Table of Contents**
-
- | Module # | Topic(s) Covered | 
- |---|---|
- |[**Mod. 1**](#1---packaging-evolution-from-basics-to-3d-integration) | **Packaging Evolution: From Basics to 3D Integration** <br> <ol> <li>[Introduction To Semiconductor Packaging And Industry Overview](#11---introduction-to-semiconductor-packaging-and-industry-overview)</li> <li>[Understanding Package Requirements And Foundational Package Types](#12---understanding-package-requirements-and-foundational-package-types)</li> <li>[Evolving Package Architectures - From Single Chip To Multi-Chip Modules](#13---evolving-package-architectures---from-single-chip-to-multi-chip-modules)</li> <li>[Interposers Re-distribution Layers And 2.5D/3D Packaging Approaches](#14---interposers-re-distribution-layers-and-25d3d-packaging-approaches)</li> <li>[Comparative Analysis And Selecting The Right Packaging Solution](#15---comparative-analysis-and-selecting-the-right-packaging-solution)</li> </ol> |
- |[**Mod. 2**](#2---from-wafer-to-package-assembly-and-manufacturing-essentials) | **From Wafer to Package: Assembly and Manufacturing Essentials** <br> <ol> <li>[Setting The Stage - Supply Chain And Facilities](#21---setting-the-stage---supply-chain-and-facilities)</li> <li>[Wafer Pre-Preparation - Grinding And Dicing](#22---wafer-pre-preparation---grinding-and-dicing)</li><li>[Wire Bond Packaging - Die Attach To Molding](#23---wire-bond-packaging---die-attach-to-molding)</li> <li>[Flip Chip Assembly - Bump Formation And Underfill](#24---flip-chip-assembly---bump-formation-and-underfill)</li> <li>[Wafer Level Packaging And Conclusion](#25---wafer-level-packaging-and-conclusion)</li> </ol> | 
- |[**Mod. 3**](#3---labs-thermal-simulation-of-semiconductor-packages-with-ansys) | **Labs: Thermal Simulation of Semiconductor Packages with ANSYS** <br> <ol> <li>[Introduction And Getting Started With ANSYS Electronics Desktop](#31---introduction-and-getting-started-with-ansys-electronics-desktop)</li> <li>[Setting Up A Flip-Chip BGA Package](#32---setting-up-a-flip-chip-bga-package)</li> <li>[Material Definitions And Thermal Power Sources](#33---material-definitions-and-thermal-power-sources)</li> <li>[Meshing And Running The Thermal Analysis](#34---meshing-and-running-the-thermal-analysis)</li> <li>[Viewing Results And Exploring Other Package Types](#35---viewing-results-and-exploring-other-package-types)</li> </ol> |
- |[**Mod. 4**](#4---ensuring-package-reliability-testing-and-performance-validation) | **Ensuring Package Reliability: Testing and Performance Validation** <br> <ol> <li>[Introduction to Package Testing and Electrical Functionality Checks](#41---introduction-to-package-testing-and-electrical-functionality-checks)</li> <li>[Reliability and Performance Testing of Semiconductor Packages](#42---reliability-and-performance-testing-of-semiconductor-pack--ages)</li> </ol> |  
- |[**Mod. 5**](#5---package-design-and-modeling-building-a-semiconductor-package-from-scratch) | **Package Design and Modeling: Building a Semiconductor Package from Scratch** <br> <ol> <li>[Introduction to Package Cross-Section Modeling in ANSYS Electronics Desktop (AEDT)](#51---introduction-to-package-cross-section-modeling-in-ansys-electronics-desktop-aedt)</li> <li>[Creating the Die and Substrate in AEDT](#52---creating-the-die-and-substrate-in-aedt)</li> <li>[Adding Die Attach Material and Bond Pads](#53---adding-die-attach-material-and-bond-pads)</li> <li>[Wire Bond Creation and Material Assignment](#54---wire-bond-creation-and-material-assignment)</li> <li>[Applying Mold Compound and Finalizing the Package Model](#55---applying-mold-compound-and-finalizing-the-package-model)</li> </ol> |
-
 
 ## 1 - Packaging Evolution: From Basics to 3D Integration
-Semiconductor packaging refers to the final stage of semiconductor device fabrication, where the finished semiconductor die is enclosed in a protective package that allows it to be integrated into electronic systems.
-**Basically, the package helps transition a fragile silicon die fabricated in a foundry cleanroom into the real-world system or product.**
+Semiconductor packaging is the process of transforming fragile silicon dies into durable, functional components that power real-world electronics. This document explores **why packaging is essential** and how it connects the foundry to final product.
 
 The key functions of a semiconductor package are:
 1. **Protection** - It safeguards the chip from external damage like physical impacts, humidity, corrosion, contaminants, chemicals, and electrostatic discharge (ESD).
@@ -27,30 +11,44 @@ The key functions of a semiconductor package are:
 
 
 
-### 1.1 - Introduction To Semiconductor Packaging And Industry Overview
+### 1.a - Introduction To Semiconductor Packaging And Industry Overview
 <br>
 
 | ![Semiconductor_Packaging](Mod-1/Mod-1/Mod-1.2.png) |
 |:---:|
 
-The semiconductor manufacturing process is divided into two main parts:
+##  1. Protected Environment:
+Semiconductor dies originate from major foundries:
+- **TSMC**
+- **Samsung**
+- **Micron**
+- **SK Hynix**
+- **Intel**
+These bare dies are **fragile** and require packaging to survive physical, chemical, and thermal stresses.
+  
+##  2. Preparing the Die for the Real World:
+Packaging serves two primary functions:
 
-* **Front-end process** - This involves making the wafer, including the CMOS fabrication, where the core circuits are built.
-* **Back-end process** - This includes packaging and testing the final chip.
+**(i) Protection:**
+- Shields against **corrosion**
+- Prevents **moisture intrusion**
+- Guards from **mechanical damage**
 
-Even the **wafer manufacturing** itself has a front-end and back-end:
+**(ii) Connectivity:**
+- Enables **die-to-die communication**
+- Bridges to the **external world**
 
-* The front-end of wafer manufacturing is where CMOS circuits are created.
-* The back-end of wafer manufacturing involves forming the metal wiring that connects different parts of the chip.
+Common Packaging Example: Ball Grid Array (BGA)
 
-After the wafer is ready, the process moves to packaging and testing:
-
-1. **Wafer testing** – Each die (chip) on the wafer is tested to check if it works.
-2. **Packaging** – Working dies are cut from the wafer and packaged.
-3. **Package testing** – Finally, the packaged chips are tested again to ensure they function properly.
+| Component         | Purpose                                                  |
+|------------------|-----------------------------------------------------------|
+| **Die Attach**        | Secures the die to substrate                        |
+| **Molding Compound**  | Encapsulates and protects the die                   |
+| **Wire Bond**         | Links die to substrate pathways                     |
+| **Substrate**         | Base layer for routing signals and power            |
+| **Trace**             | Conductive lines for signal transmission            |
 
 The following figure shows how these steps fit into the overall semiconductor manufacturing process.
-
 
 
 | ![Semiconductor_Manufacturing](Mod-1/Mod-1/Mod-1.3.png) |
