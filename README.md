@@ -503,7 +503,7 @@ ________________________________________________________________________________
 
 ICs are tested at multiple points during the manufacturing process to ensure they meet performance, reliability, and functionality requirements. Testing takes place both at the foundry and at OSAT facilities.
 
-| ![Testing_at_Different_Stages](./docs/images/M4_L1_1.png) |
+| ![Testing_at_Different_Stages](Mod-4/Mod-4/Mod-4.1.png) |
 |:---|
 
 #### 4.1.1 - Foundry Testing Stages
@@ -530,7 +530,7 @@ ICs are tested at multiple points during the manufacturing process to ensure the
     - Burn-in Test: Elevated temperature and voltage and power cycling are applied to accelerate ageing to catch early failures.
     - Final Test: Validate the electrical performance of the packaged IC across temperature and voltage corners and ensure it meets the datasheet specifications.
 
-| ![Package_Testing_1](./docs/images/M4_L1_2.png) | ![Package_Testing_2](./docs/images/M4_L1_3.png) |
+| ![Package_Testing_1](Mod-4/Mod-4/Mod-4.2.png) | ![Package_Testing_2](Mod-4/Mod-4/Mod-4.3.png) |
 |:---|:---|
 
 **4. System Level Testing (SLT)**
@@ -544,7 +544,7 @@ ICs are tested at multiple points during the manufacturing process to ensure the
 - Burn-in testing is a reliability screening method where semiconductor devices are exposed to high temperatures, voltages, and stress conditions for a prolonged time to accelerate aging and detect potential failures.
 - This process helps identify and remove early-life failures (also known as "infant mortality") before the ICs are shipped to customers.
   
-| ![Package_Testing_3](./docs/images/M4_L2_1.png) |
+| ![Package_Testing_3](Mod-4/Mod-4/Mod-4.4.png) |
 |:---|
 
 **2. Final Test (FT):**
@@ -552,13 +552,13 @@ ICs are tested at multiple points during the manufacturing process to ensure the
 - It ensures the packaged device meets all functional, parametric, and performance requirements before shipping.
 - This testing is usually done by OSATs (Outsourced Semiconductor Assembly and Test providers) or by the company’s in-house test labs.
   
-| ![Package_Testing_4](./docs/images/M4_L2_2.png) |
+| ![Package_Testing_4](Mod-4/Mod-4/Mod-4.5.png) |
 |:---|
 
 
 **Summary: ATE & Test Categories**
 
-| ![Package_Testing_5](./docs/images/M4_L2_3.png) |
+| ![Package_Testing_5](Mod-4/Mod-4/Mod-4.6.png) |
 |:---|
 _________________________________________________________________________________________________________  
 
