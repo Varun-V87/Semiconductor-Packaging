@@ -30,7 +30,7 @@ The key functions of a semiconductor package are:
 ### 1.1 - Introduction To Semiconductor Packaging And Industry Overview
 <br>
 
-| ![Semiconductor_Packaging](./docs/images/M1_L1_1.png) |
+| ![Semiconductor_Packaging](Mod-1/Mod-1/Mod-1.2.png) |
 |:---:|
 
 The semiconductor manufacturing process is divided into two main parts:
