@@ -53,7 +53,7 @@ The following figure shows how these steps fit into the overall semiconductor ma
 
 
 
-| ![Semiconductor_Manufacturing](./docs/images/M1_L1_2.png) |
+| ![Semiconductor_Manufacturing](Mod-1/Mod-1/Mod-1.3.png) |
 |:---:|
 
 _Ref:_ [_SK Hynix Newsroom: Semiconductor Back-End Process Episode 3_](https://news.skhynix.com/semiconductor-back-end-process-episode-1-understanding-semiconductor-testing/)
@@ -68,7 +68,7 @@ _Ref:_ [_SK Hynix Newsroom: Semiconductor Back-End Process Episode 3_](https://n
 #### 1.2.1 - Package Requirements
 Selecting the right semiconductor package is a critical step in electronic system design, as it affects performance, cost, thermal management, size, and reliability. 
 
-| ![Package_Requirements](./docs/images/M1_L2_2.png) |
+| ![Package_Requirements](Mod-1/Mod-1/Mod-1.5.png) |
 |:---:|
 
 **The Key Criteria for Semiconductor Package Selection are:**
@@ -100,7 +100,7 @@ Selecting the right semiconductor package is a critical step in electronic syste
 #### 1.2.2 - Typical Package Structure
 The following figure below shows the structure of a typical chip package and the connection hierarchy:
 
-| ![Package_Structure](./docs/images/M1_L2_3.png) |
+| ![Package_Structure](Mod-1/Mod-1/Mod-1.6.png) |
 |:---:|
 
 A typical IC package consists of:
@@ -142,7 +142,7 @@ The various types of semiconductor packages can be broadly grouped into two main
 
 In conventional packaging, the wafer is sawed into dice before the chip is packaged, while wafer-level packaging involves a part, or all, of the packaging process being performed at the wafer level before proceeding with wafer sawing.
 
-| ![Package_Classification](./docs/images/M1_L3_2.png) |
+| ![Package_Classification](Mod-1/Mod-1/Mod-1.8.png) |
 |:---|
 | _Ref:_ [_SK Hynix Newsroom: Semiconductor Back-End Process Episode 3_](https://news.skhynix.com/semiconductor-back-end-process-episode-3-understanding-the-different-types-of-semiconductor-packages/)_ |
 
@@ -167,12 +167,12 @@ Semiconductor packages are usually categorized based on the material used in the
 
 The below figure shows the anatomy of some of the commonly used leadframe and laminate based packages and advanced substrates:
 
-| ![Package_Anatomy](./docs/images/M1_L3_1.png) |
+| ![Package_Anatomy](Mod-1/Mod-1/Mod-1.7.png) |
 |:---|
 
 ### 1.4 - Interposers, RDLs And 2.5D and 3D Packaging Approaches:
 
-| ![Package_Interposers_RDLs](./docs/images/M1_L4_1.png) |
+| ![Package_Interposers_RDLs](Mod-1/Mod-1/Mod-1.9.png) |
 |:---|
 
 #### 1.4.1 - Redistribution Layers (RDL)
@@ -221,7 +221,7 @@ An interposer is a passive or active layer inserted between the die and the subs
 ### 1.5 - Comparative Analysis And Selecting The Right Packaging Solution
 The following table provides a comparison of the various IC package types and their typical applications:
 
-| ![Packages_Comparison](./docs/images/M1_L5_1.png) |
+| ![Packages_Comparison](Mod-1/Mod-1/Mod-1.91.png) |
 |:---|
 
 Selecting the right semiconductor packaging depends on multiple criteria across performance, reliability, form factor and cost.
