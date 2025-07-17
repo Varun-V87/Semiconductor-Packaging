@@ -676,61 +676,110 @@ ________________________________________________________________________________
 
 ## 4 - Ensuring Package Reliability: Testing and Performance Validation
 
-### 4.1 - Introduction to Package Testing and Electrical Functionality Checks
+### 4.A - Introduction to Package Testing and Electrical Functionality Checks
 
 ICs are tested at multiple points during the manufacturing process to ensure they meet performance, reliability, and functionality requirements. Testing takes place both at the foundry and at OSAT facilities.
 
 | ![Testing_at_Different_Stages](Mod-4/Mod-4/Mod-4.1.png) |
 |:---|
 
-#### 4.1.1 - Foundry Testing Stages
-**1. Front-End Manufacturing:**
-- This step involves fabricating integrated circuits on silicon wafers.
-- It focuses on fine-tuning process parameters to improve yield, reduce IDDQ/leakage, and enhance speed and performance.
+## Semiconductor Testing Stages - Foundry to OSAT Workflow
 
-**2. Wafer Probe Test:**
-- The wafer is placed on a probe station, where a probe card contacts the die’s bond pads or bump pads.
-- An Automated Test Equipment (ATE) sends test patterns to identify and mark each die as good or bad.
+| **Stage**                  | **Description**                                                                                          |
+|---------------------------|----------------------------------------------------------------------------------------------------------|
+| **Front-End Manufacturing (Foundry Phase)** | **Process Development**: <br> - Test wafers used for refining fabrication <br> - Validate transistor behavior, etching precision, layer uniformity <br> - Data used for Process Control Monitoring (PCM) and yield improvement |
+|                           | **Wafer Probe Test (Sort Test)**: <br> - Probe stations contact test pads on each die <br> - Identify good vs. bad dies (KGDs) <br> - Generate wafer maps with pass/fail status <br> - Avoids packaging defective dies |
+| **OSAT: Back-End Assembly and Test Phase** | **Wafer Sorting**: <br> - Use wafer maps to guide die singulation <br> - Sort dies into pass/fail/engineering bins <br> - Robotic handling & vision inspection |
+|                           | **Package Manufacturing**: <br> - Fine-tune assembly process (die attach, wire bond loop, mold flow) <br> - Assemble packages using cleanroom protocols |
+|                           | **Package Testing**: <br> - Perform electrical testing for logic, analog, power specs <br> - Use automated test equipment (ATE) with test handlers <br> - Conduct burn-in to detect early-life failures |
+|                           | **System-Level Testing (SLT)**: <br> - Place packaged chips in real systems (e.g., smartphones) <br> - Test boot-up, connectivity, performance under stress <br> - Detect latent defects not found in earlier tests |
+| **Cross-Cutting Functions** | **Diagnosis & Failure Analysis**: <br> - SEM imaging, X-ray, and electrical analysis <br> - Identify root causes of failures <br> - Feedback to foundry and OSAT for continuous improvement |
 
-#### 4.1.2 - OSAT Testing Stages
-**1. Wafer Sorting:**
-- Dies are sorted based on the results of the wafer probe test.
-- Only the functional dies move forward to the packaging process.
 
-**2. Package Manufacturing:**
-- The good dies are packaged into their respective semiconductor packages.
+| ![Package_Testing_1](Mod-4/Mod-4/Mod-4.2.png) | 
 
-**3. Package Testing:**
-  - Conducted in ISO Class 6/7 cleanroom zones
-  - Testing includes:
-    - AOST (Assembly Open and Short Test): Shorts/ Opens in Packages
-    - Burn-in Test: Elevated temperature and voltage and power cycling are applied to accelerate ageing to catch early failures.
-    - Final Test: Validate the electrical performance of the packaged IC across temperature and voltage corners and ensure it meets the datasheet specifications.
-
-| ![Package_Testing_1](Mod-4/Mod-4/Mod-4.2.png) | ![Package_Testing_2](Mod-4/Mod-4/Mod-4.3.png) |
-|:---|:---|
+| ![Package_Testing_2](Mod-4/Mod-4/Mod-4.3.png) |
+|:---|
 
 **4. System Level Testing (SLT)**
   - Testing is performed in conditions that closely mimic real-world system operation. SLT verifies how a chip behaves when it runs actual software or firmware inside a system-like environment.
 
-### 4.2 - Reliability and Performance Testing of Semiconductor Packages
+### 4.B - Reliability and Performance Testing of Semiconductor Packages
 
-#### 4.2.1 Burn-in and Final Test
+#### 4.B.1 Burn-in and Final Test
 
-**1. Burn-In Test:**
-- Burn-in testing is a reliability screening method where semiconductor devices are exposed to high temperatures, voltages, and stress conditions for a prolonged time to accelerate aging and detect potential failures.
-- This process helps identify and remove early-life failures (also known as "infant mortality") before the ICs are shipped to customers.
-  
 | ![Package_Testing_3](Mod-4/Mod-4/Mod-4.4.png) |
 |:---|
-
-**2. Final Test (FT):**
-- Final Test is the last major electrical test performed after the die has been packaged.
-- It ensures the packaged device meets all functional, parametric, and performance requirements before shipping.
-- This testing is usually done by OSATs (Outsourced Semiconductor Assembly and Test providers) or by the company’s in-house test labs.
+Burn-in testing aims to detect "Infant Mortality" failures, which occur during the earliest phase of a component’s operational life.
+- These failures are typically caused by manufacturing defects, weak dielectric layers, metallization issues, or contamination.
+- Burn-in stress conditions accelerate these failure mechanisms using controlled environmental extremes (e.g. temperature, power cycling).
+- The goal is to eliminate unreliable devices early and ensure only robust units reach customers.
   
+---
+**Process Description:**
+
+1. **Loading Devices:**  
+   - Semiconductor packages are placed in **trays** that are then mounted onto **Burn-in Boards (BiBs)**.
+   - Each BiB contains sockets and power rails configured for stress delivery.
+
+2. **Oven Testing (Burn-in System):**  
+   - The BiBs are inserted into **Burn-in ovens** - chambers calibrated to maintain high temperature and voltage conditions.
+   - Tests are executed for a duration long enough to observe failure rate changes, but short enough to avoid total component degradation.
+
+3. **Failure Acceleration:**  
+   - High voltage and high temperature leads to quicker emergence of defects like:
+     - Dielectric breakdown
+     - Electromigration
+     - Interconnect corrosion
+   - Devices showing signs of failure during burn-in are automatically marked or removed.
+
+---
+**Failure Rate vs Time Profile**
+
+The characteristic failure curve during Burn-in resembles the **Bathtub Curve**, composed of three phases:
+
+- **Infant Mortality Region:**  
+  - Steep decline in failure rate over time  
+  - Burn-in tests are targeted here to screen these defects
+
+- **Useful Life Region:**  
+  - Flat section of the curve — indicates low, random failure rates  
+  - Devices surviving Burn-in likely reside in this zone
+
+- **Wear-Out Region:**  
+  - Failure rate increases due to aging effects like fatigue or thermal cycling  
+  - Occurs far later in the lifecycle
+
+The **observed failure rate curve** is shaped by the cumulative effect of stress exposure and defect activation.
+
+---
+**Trade-Offs of Burn-in Testing**
+
+- **Advantages**:
+  - Filters early failures before shipment
+  - Increases customer confidence and warranty reliability
+  - Supports field performance benchmarking
+
+- **Disadvantages**:
+  - Reduces overall lifespan due to stress-induced aging
+  - Adds cost and complexity to manufacturing
+  - May not reveal latent defects if duration or profile isn’t calibrated well
+
+---
+
 | ![Package_Testing_4](Mod-4/Mod-4/Mod-4.5.png) |
 |:---|
+**Final Test**- Validates ICs under extreme temperature conditions <br> - Screens for thermal-dependent electrical failures <br> - Ensures reliability before system-level deployment 
+ 
+**Final Test - Temperature Corner Verification in IC Testing Workflow**
+
+| **Stage**                    | **Description**                                                                                             |
+|-----------------------------|-------------------------------------------------------------------------------------------------------------|
+| **Hot Test Procedure**    | - Use temperature-controlled handlers (not ovens) <br> - For LM741: <br>   - **125 °C for LM741 / LM741A** <br>   - **70 °C for LM741C** <br> - Test parameters: offset voltage, gain linearity, bias current stability |
+| **Cold Test Procedure**   | - Use handler to apply low-temp conditions <br> - For LM741: <br>   - **-50 °C for LM741 / LM741A** <br>   - **0 °C for LM741C** <br> - Look for offset drift, gain reduction, or logic failures |
+| **Handler & ATE Setup**   | - **Handler Unit**: Loads DUT into temp-controlled sockets <br> - **Temperature Control**: Provides heating/cooling zones <br> - **ATE**: Runs electrical test patterns, captures I/O data, and records binning results |
+| **LM741 Test Specs**      | - **Input Offset Voltage**: 1–5 mV <br> - **Input Bias Current**: 20–200 nA <br> - **Input Voltage Range**: ±12 to ±13 V <br> - **Output Swing**: ±12 to ±14 V <br> - **Operating Temp**: Up to 125 °C <br> - **Junction Temp**: Up to 150 °C |
+| **Importance**            | - Temperature corner testing is essential to detect field-related failures <br> - Guarantees electrical spec compliance across operational extremes |
 
 
 **Summary: ATE & Test Categories**
