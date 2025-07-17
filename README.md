@@ -4,6 +4,7 @@
 Semiconductor packaging is the process of transforming fragile silicon dies into durable, functional components that power real-world electronics. This document explores **why packaging is essential** and how it connects the foundry to final product.
 
 The key functions of a semiconductor package are:
+
  **- Protection**: Shields silicon die from mechanical, thermal, and chemical threats.  
  **- Electrical Bridging**: Routes signals between silicon and PCB.  
  **- Thermal Management**: Transfers heat away from the die.  
