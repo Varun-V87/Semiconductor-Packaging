@@ -573,16 +573,10 @@ ANSYS Electronics Desktop (AEDT) is a multi-physics simulation software that com
 
 ### 3.2 - Setting Up A Flip-Chip BGA Package
 
-We will be taking an already available FC-BGA package within the Icepak Toolkit for this simulation exercise.
-
-
-  - **Step 1 : Open AEDT and launch Icepak**
-
 | ![AEDT_IcePak_1](Mod-3/Mod-3[Lab-1]/Mod-3.0.png) |
 |:---|
 
   - **Step 2.1 : Create a Flipchip BGA Package**
-    - `Icepak -> Toolkit -> Geometry -> Packages -> Flipchip_BGA`
 
 | ![AEDT_IcePak_2](Mod-3/Mod-3[Lab-1]/Mod-3.01.png) |
 |:---|
