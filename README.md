@@ -827,7 +827,7 @@ This is a hands-on lab to design a semiconductor wire bond package from scratch 
 
 **7. Mold Compound:**
 - Material: Epoxy_kevlar_xy
-= Thickness: 1.2mm
+- Thickness: 1.2mm
 
 
 | ![AEDT_Q3D_1](Mod-5/Mod-5[Lab-2]/Mod-5.0.png) |
