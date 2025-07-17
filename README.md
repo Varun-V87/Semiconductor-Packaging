@@ -159,19 +159,19 @@ This table categorizes different mounting technologies used in semiconductor pac
 |--------------------------|---------------------|-----------------------------------------------------------|--------------------------------------------------------|
 | **Through-hole Mounting**| TO                  | Transistor Outline                                        | Discrete transistors                                  |
 |                          | SIP                 | Single In-line Package                                    | Basic logic chips                                     |
-|                          | DIP                 | Dual In-line Package                                      | Early microcontrollers, EEPROMs                      |
-|                          | PGA                 | Pin Grid Array                                            | Older CPUs, socketed processors                       |
+|                          | DIP                 | Dual In-line Package                                      | Microcontrollers, EEPROMs                      |
+|                          | PGA                 | Pin Grid Array                                            | CPUs, socketed processors                       |
 | **Surface Mount Technology**|  SOIC                | Small Outline Integrated Circuit                          | Logic ICs, op-amps                                    |
-|                          | QFN                 | Quad Flat No-leads                                        | RF chips, sensors                                     |
+|                          | QFN                 | Quad Flat No-leads                                        | RF chips                                     |
 |                          | QFP                 | Quad Flat Package                                         | Microcontrollers, DSPs                               |
 |                          | PBGA                | Plastic Ball Grid Array                                   | General-purpose processors                            |
 |                          | LGA                 | Land Grid Array                                           | High-density CPUs, FPGAs                              |
 |                          | FCBGA               | Flip Chip Ball Grid Array                                 | High-end GPUs, AI chips                               |
 |                          | CSP                 | Chip Scale Package                                        | Mobile SoCs, wearable electronics                     |                         
-| **Advanced Packages**    | PoP                 | Package on Package                                        | Qualcomm SD series, Apple A-series, Samsung Exynos    |
+| **Advanced Packages**    | CoWoS                 |  Chip-on-Wafer-on-Substrate                                    | Nvidia GP100, GV100, GA100    |
 |                          | MCM                 | Multi-Chip Module                                         | Intel Broadwell, multi-functional ICs                 |
-|                          | SiP                 | System-in-Package                                         | Apple S1 (used in Apple Watch)                        |
-|                          | CoWoS               | Chip-on-Wafer-on-Substrate                                | Nvidia GP100, GV100, GA100 — used in AI/HPC           |
+|                          | SiP                 | System-in-Package                                         | Apple S1                        |
+|                          | PoP              | Package on Package                               |  Qualcomm SD series, Apple A-series,Samsung Exynos         |
 
 
 
@@ -232,7 +232,7 @@ Wafer-Level Packaging (WLP) involves packaging the die at the wafer level before
 
 ---
 
-The below figure shows the anatomy of some of the commonly used leadframe and laminate based packages and advanced substrates:
+### Package Anatomy:
 
 | ![Package_Anatomy](Mod-1/Mod-1/Mod-1.7.png) |
 |:---|
@@ -299,7 +299,6 @@ The final layer of packaging nomenclature refers to how packages interact with t
 ---
 
 ### 1.E - Comparative Analysis And Selecting The Right Packaging Solution
-The following table provides a comparison of the various IC package types and their typical applications:
 
 | ![Packages_Comparison](Mod-1/Mod-1/Mod-1.91.png) |
 |:---|
@@ -307,7 +306,7 @@ The following table provides a comparison of the various IC package types and th
 _________________________________________________________________________________________________________  
 
 ## 2 - From Wafer to Package: Assembly and Manufacturing Essentials
-This section covers the semiconductor supply chain and provides a detailed look into a package manufacturing unit (**ATMP** – Assembly, Testing, Marking, and Packaging).
+The module-2 covers the semiconductor supply chain and provides a detailed look into a package manufacturing unit (**ATMP** – Assembly, Testing, Marking, and Packaging).
 
 ### 2.A - Setting The Stage - Supply Chain And Facilities
 #### 2.A.1 - Semiconductor Supply Chain Overview
@@ -315,7 +314,7 @@ This section covers the semiconductor supply chain and provides a detailed look 
 | ![Semiconductor_Supply_Chain](Mod-2/Mod-2/Mod-2.1.png) |
 |:---|
 
-**1. Design House Stage:**
+**1. Design House:**
 - It is responsible for turning concepts into manufacturable digital architectures.
 
 A. Core Functions:
@@ -567,104 +566,115 @@ ________________________________________________________________________________
 
 ## 3 - Labs: Thermal Simulation of Semiconductor Packages with ANSYS tools
 
-### 3.1 - Introduction And Getting Started With ANSYS Electronics Desktop
+### 3.A - Introduction And Getting Started With ANSYS Electronics Desktop
 
-ANSYS Electronics Desktop (AEDT) is a multi-physics simulation software that combines Electromagnetic, Signal Integrity, Thermal and Electro-Mechanical simulation tools in a single integrated platform. It is widely used for designing and analyzing high-speed electronic circuits and systems.
+ANSYS Electronics Desktop (AEDT) is a multi-physics simulation software that combines Electromagnetic, Signal Integrity, Thermal and Electro-Mechanical simulation tools in a single integrated platform and it is widely used for designing and analyzing high-speed electronic circuits and systems.
 
-### 3.2 - Setting Up A Flip-Chip BGA Package
+### 3.B - Setting Up A Flip-Chip BGA Package
 
 | ![AEDT_IcePak_1](Mod-3/Mod-3[Lab-1]/Mod-3.0.png) |
 |:---|
 
-  - **Step 2.1 : Create a Flipchip BGA Package**
+  - **Step B.1: Create a Flipchip BGA Package**
 
 | ![AEDT_IcePak_2](Mod-3/Mod-3[Lab-1]/Mod-3.01.png) |
 |:---|
 
-  - **Step 2.2 : The Package Configuration window opens up**
-    - The dimensions and other aspects of the package, substrate, die, die underfill and the solder balls can be configured here.
-    - Once configured, click OK to generate the package model. 
+| ![AEDT_IcePak_3](Mod-3/Mod-3[Lab-1]/Mod-3.1.png) |
+|:---|
 
-| ![AEDT_IcePak_3](Mod-3/Mod-3[Lab-1]/Mod-3.1.png) | ![AEDT_IcePak_4](Mod-3/Mod-3[Lab-1]/Mod-3.2.png) |
-|:---|:---|
+|![AEDT_IcePak_4](Mod-3/Mod-3[Lab-1]/Mod-3.2.png) |
+|:---|
+
 | ![AEDT_IcePak_5](Mod-3/Mod-3[Lab-1]/Mod-3.3.png) |
-
-| Package generated in Icepak <br> ![AEDT_IcePak_7](Mod-3/Mod-3[Lab-1]/Mod-3.6.png) |
 |:---|
 
-  - **Step 3 : Explore the 3D Package Model Structure in Icepak**
-
-**Ball Group** <br> ![AEDT_IcePak_8](Mod-3/Mod-3[Lab-1]/Mod-3.4.png) 
-
-**Substrate** <br> ![AEDT_IcePak_9](Mod-3/Mod-3[Lab-1]/Mod-3.5.png) 
-
-
-### 3.3 - Material Definitions And Thermal Power Sources
-
-  - **Step 4 : Review and modify the material and definition types for the different components of the model.**
+| The Package is generated: <br> ![AEDT_IcePak_7](Mod-3/Mod-3[Lab-1]/Mod-3.6.png) |
 |:---|
 
-  - **Step 5.1 : Add/ Assign Source Thermal Model for Die**
-    - In "Project Manager" sub-window, expand Thermal section and open the **_BGA1_die_source_** and configure the thermal condition as shown below:
-
- Source Thermal Model for Die <br> ![AEDT_IcePak_13](Mod-3/Mod-3[Lab-1]/Mod-3.7.png) 
+| ![AEDT_IcePak_8](Mod-3/Mod-3[Lab-1]/Mod-3.4.png) |
 |:---|
 
-- **Step 5.2 : Add/ Assign Source Thermal Model for Substrate**
-    - To add a thermal boundary condition for the substrate, right click on **_Flipchip_BGA1_substrate_** under `Models -> Flipchip_BGA1_Group -> Solids` and assign a Thermal Source.
+| ![AEDT_IcePak_9](Mod-3/Mod-3[Lab-1]/Mod-3.5.png) |
+|:---|
+
+### 3.C - Material Definitions And Thermal Power Sources
+
+  - **Step C.1: Review and modify the material and definition types for the different components of the model.**
+|:---|
+
+  - **Step C.2: Add or Assign Source Thermal Model for Die**
+    - In "Project Manager" sub-window, expand Thermal section and open the "BGA1_die_source" and configure the thermal condition as shown below:
+
+| ![AEDT_IcePak_13](Mod-3/Mod-3[Lab-1]/Mod-3.7.png) |
+|:---|
+
+- **Step C.3: Add/ Assign Source Thermal Model for Substrate**
+    - To add thermal boundary condition for the substrate, right click on "Flipchip_BGA1_substrate" under "Models -> Flipchip_BGA1_Group -> Solids" and assign a Thermal Source.
     - Set the thermal condition on the substrate to Fixed Temperatue and the temperature as Ambient.
 
- Add Source Thermal Model for Substrate <br> ![AEDT_IcePak_14.1](Mod-3/Mod-3[Lab-1]/Mod-3.8.png) 
+| ![AEDT_IcePak_14.1](Mod-3/Mod-3[Lab-1]/Mod-3.8.png) |
+|:---|
 
 
-  - **Step 6 : Add Thermal monitors for the different components**
-    - To add a Thermal monitor to the substrate, right click on the **_Flipchip_BGA1_substrate_** under `Models -> Flipchip_BGA1_Group -> Solids` and then choose `Assign Monitor -> Point...`
-    - In the sub-window that appears, select **Temperature**
-    - Repeat the same to add thermal monitors for the die and the die-underfill.
+  - **Step C.4: Add Thermal monitors for the different components**
+    - To add a Thermal monitor to the substrate, right click on the "Flipchip_BGA1_substrate" under "Models -> Flipchip_BGA1_Group -> Solids" and choose "Assign Monitor -> Point"
+    - In the sub-window that appears, select "Temperature"
+    - Repeat the same for the die and the die-underfill.
 
- Thermal monitors added <br> ![AEDT_IcePak_16](Mod-3/Mod-3[Lab-1]/Mod-3.9.png) 
+| ![AEDT_IcePak_16](Mod-3/Mod-3[Lab-1]/Mod-3.9.png) |
+|:---|
 
+### 3.D - Meshing And Running The Thermal Analysis
 
-### 3.4 - Meshing And Running The Thermal Analysis
+  - **Step D.1: Generate Mesh**
+    - Go to the Simulation tab and click on "Generate Mesh"
+   
+  - **Step D.2: Review Mesh Quality metrics**
 
-  - **Step 7.1 : Generate Mesh**
-    - Go to the Simulation tab and click on `Generate Mesh`
-    - Save the project if prompted and wait for the mesh generation to get completed.
-    - Take a note of any error(s) and warning(s) that are shown and ignore/ take steps to debug & fix the issue(s) as required.
-
-  - **Step 7.2 : Review Mesh Quality metrics**
-    - Once the mesh is generated, review the quality metrics of the generated mesh such as Face Alignment, Skewness and Volume.
-
- **Mesh Quality - Face Alignment** ![AEDT_IcePak_17.1](Mod-3/Mod-3[Lab-1]/Mod-3.91.png)  **Mesh Quality - Skewness** ![AEDT_IcePak_17.2](Mod-3/Mod-3[Lab-1]/Mod-3.92.png) 
+ **Mesh Quality - Face Alignment** ![AEDT_IcePak_17.1](Mod-3/Mod-3[Lab-1]/Mod-3.91.png) 
+ 
+ **Mesh Quality - Skewness** ![AEDT_IcePak_17.2](Mod-3/Mod-3[Lab-1]/Mod-3.92.png) 
 
  **Mesh Quality - Volume** ![AEDT_IcePak_17.3](Mod-3/Mod-3[Lab-1]/Mod-3.93.png) 
 
-  - **Step 8 : Add Thermal Analysis**
-    - Under `Project Manager`, right click on `Analysis and then, select Add Analysis Setup` and configure the solver settings as required. (We will choose all default settings for our analysis)
+  - **Step D.3: Add Thermal Analysis**
+    - Under "Project Manager", right click on "Analysis and select Add Analysis Setup" and configure the settings as required.
+      
+ | ![AEDT_IcePak_19](Mod-3/Mod-3[Lab-1]/Mod-3.94.png) |
+ |:---|
 
-### 3.5 - Viewing Results And Exploring Other Package Types
+### 3.E - Viewing Results And Exploring Other Package Types
 
-  - **Step 9 : Now, Validate the Simulation setup**
-    - Click on the **Validate** button in the top ribbon
-    - Ensure all checks are validated successfully
+  - **Step E.1: Validate the Simulation setup**
+    - Click on the "Validate" button in the top
+    - Ensure all checks are validated
 
- **Validate the setup** <br> ![AEDT_IcePak_19](Mod-3/Mod-3[Lab-1]/Mod-3.94.png) 
+  | ![AEDT_IcePak_19](Mod-3/Mod-3[Lab-1]/Mod-3.95.png) |
+|:---|
 
 
-  - **Step 10: Run the simulation and plot the temperature map**
-    - Click on **Analyze All** button in the top ribbon
-    - Wait for the simulation to get completed successfully. Take note of any warning(s) or errors that may need further debug or setup modification(s).
-    - Once the simulation is completed, select the complete FC-BGA package in the 3D view by drawing a selection rectangle using the left-mouse button.
-    - Right click and then select `Plot Fields -> Temperature -> Temperature`
-    - Configure the different plot options:
-      - Specify Name, Folder
+  - **Step E.2: Run the simulation and plot the temperature map**
+    - Click on "Analyze All" button in the top 
+    - Wait for the simulation to get completed
+    - After the simulation is completed, select the complete FC-BGA package by drawing a rectangle using the left-click button.
+    - Right click and then select "Plot Fields -> Temperature -> Temperature"
+    - Click on the different plot options:
+      - Specify Name and Folder
       - Plot on Surface only
-      - Surface Smoothing -> Enable Gaussian Smoothing
+      - Surface Smoothing and click on "Enable Gaussian Smoothing"
 
- **Field Plot Settings** ![AEDT_IcePak_21](Mod-3/Mod-3[Lab-1]/Mod-3.95.png) 
+| ![AEDT_IcePak_21](Mod-3/Mod-3[Lab-1]/Mod-3.96.png) |
+|:---|
+ 
+| ![AEDT_IcePak_21](Mod-3/Mod-3[Lab-1]/Mod-3.97.png) |
+|:---|
 
- **Field Plot - Top view** ![AEDT_IcePak_22](Mod-3/Mod-3[Lab-1]/Mod-3.96.png)  **Field Plot - Bottom view** ![AEDT_IcePak_23](Mod-3/Mod-3[Lab-1]/Mod-3.97.png) 
-
+| ![AEDT_IcePak_22](Mod-3/Mod-3[Lab-1]/Mod-3.98.png) |
+|:---|
+ 
+| ![AEDT_IcePak_23](Mod-3/Mod-3[Lab-1]/Mod-3.99.png) |
+|:---|
 
 _________________________________________________________________________________________________________  
 
@@ -672,7 +682,7 @@ ________________________________________________________________________________
 
 ### 4.A - Introduction to Package Testing and Electrical Functionality Checks
 
-ICs are tested at multiple points during the manufacturing process to ensure they meet performance, reliability, and functionality requirements. Testing takes place both at the foundry and at OSAT facilities.
+Integrated Circuits are tested at multiple points during the manufacturing process to ensure performance, reliability, and functionality requirements.
 
 | ![Testing_at_Different_Stages](Mod-4/Mod-4/Mod-4.1.png) |
 |:---|
@@ -691,12 +701,10 @@ ICs are tested at multiple points during the manufacturing process to ensure the
 
 
 | ![Package_Testing_1](Mod-4/Mod-4/Mod-4.2.png) | 
+|:---|
 
 | ![Package_Testing_2](Mod-4/Mod-4/Mod-4.3.png) |
 |:---|
-
-**4. System Level Testing (SLT)**
-  - Testing is performed in conditions that closely mimic real-world system operation. SLT verifies how a chip behaves when it runs actual software or firmware inside a system-like environment.
 
 ### 4.B - Reliability and Performance Testing of Semiconductor Packages
 
@@ -729,7 +737,6 @@ Burn-in testing aims to detect "Infant Mortality" failures, which occur during t
 
 ---
 **Failure Rate vs Time Profile**
-
 The characteristic failure curve during Burn-in resembles the **Bathtub Curve**, composed of three phases:
 
 - **Infant Mortality Region:**  
@@ -786,107 +793,151 @@ ________________________________________________________________________________
 
 This is a hands-on lab to design a semiconductor wire bond package from scratch using Ansys Electronics Desktop (AEDT). 
 
-### 5.1 - Introduction to Package Cross-Section Modeling in ANSYS Electronics Desktop (AEDT)
-
-The main focus of this lab exercise is to build the complete cross-section of a wire bond package, including die, substrate, bonding wires, and mold compound, rather than performing any simulation or analyses.
+### 5.A - Introduction to Package Cross-Section Modeling in ANSYS Electronics Desktop (AEDT)
 
 **<U>Package Specifications:</U>**
-| Component | Properties |
-|:---|:---|
-| 1. Die | <ul> <li>Material : Silicon</li> <li>Dimensions : 3mm x 3mm</li> <li>Die Height : 200 micron</li> </ul> |
-| 2. Substrate | <ul> <li>Material : FR4</li> <li>Dimensions : 5mm x 5mm</li> <li>Height : 500 micron</li> </ul> |
-| 3. Die Attach | <ul> <li>Material : Modified Epoxy</li> <li>Dimensions : 3mm x 3mm</li> <li>Thickness : 100 micron</li> </ul> |
-| 4. Die Bond Pads | <ul> <li>Material : Copper</li> <li>Dimensions : 0.2mm x 0.2mm</li> <li>Thickness : 5 micron</li> </ul> |
-| 5. Substrate Bond Pads | <ul> <li>Material : Copper</li> <li>Dimensions : 0.2mm x 0.2mm</li> <li>Thickness : 10 micron</li> </ul> |
-| 6. Bond Wire | <ul> <li>Material : Gold wire</li> <li>Type: JEDEC 4-point</li> </ul> |
-| 7. Mold Compound | <ul> <li>Material : Epoxy</li> <li>Thickness : 1.2mm</li> </ul> |
+**1. Die:**
+Material: Silicon
+Dimensions: 3mm × 3mm
+Thickness: 0.2mm
 
-  - **Step 1 : Launch AEDT and select Q3D (or Icepak, Maxwell 3D)**
+**2. Substrate:**
+Material: FR4_epoxy
+Dimensions: 5mm × 5mm
+Thickness: -0.5mm
+
+**3. Die Attach:**
+Material: Modified_epoxy
+Dimensions: 3mm × 3mm
+Thickness: -0.1mm
+
+**4. Die Bondpad:**
+Material: Copper
+Dimensions: 0.2mm × 0.2mm
+Thickness: 0.005mm
+
+**5. Substrate Bondpad:**
+Material: Copper
+Dimensions: 0.2mm × 0.2mm
+
+**6. Bond Wire:**
+Material: Gold
+Type: JEDEC 4-point configuration
+
+**7. Mold Compound:**
+Material: Epoxy_kevlar_xy
+Thickness: 1.2mm
+
 
 | ![AEDT_Q3D_1](Mod-5/Mod-5[Lab-2]/Mod-5.0.png) |
 |:---|
 
-### 5.2 - Creating the Die and Substrate in AEDT
+### 5.B - Creating the Die and Substrate in AEDT
 
-  - **Step 2 : Define the working unit**
-    - `Modeler -> Units...`
-    - Choose **mm** or **um** as the working unit for creating the model.
+  - **Step B.1: Create the Die Geometry**
+  |  ![AEDT_Q3D_B.1](Mod-5/Mod-5[Lab-2]/Mod-5.13.png) |
+|:---|
 
-  - **Step 3.1 : Create the Die Geometry**
-    - Select the rectangle tool from the ribbon or using the Menus (`Draw -> Rectangle`) to draw a rectangle
-    - Now, double click on **CreateRectangle** `Model -> Rectangle1` to open up its Properties Dialog box.
-    - Specify the position with one corner at the origin (0, 0, 0) and the dimensions as 3mm x 3mm
-    - Select `Model -> Rectangle1` and from the menu bar: `Modeler -> Surface -> Thicken Sheet...` and set the thickness to 200 microns (0.2mm)
+|![AEDT_Q3D_B.2](Mod-5/Mod-5[Lab-2]/Mod-5.15.png) |
+|:---|
 
-  - **Step 3.2 : Assign Material Properties**
-    - Open up the Properties Dialog box either by double clicking on `Model -> Rectangle1`
-    - Rename the geometry to **Die**
-    - Choose **Silicon** as the material from the Material Library.
+| ![AEDT_Q3D_B.3](Mod-5/Mod-5[Lab-2]/Mod-5.22.png) |  
+|:---|
+ 
+  - **Step B.2: Create the Substrate Geometry**
+    - Draw another rectangle for the substrate (5mm x 5mm) and position (-1, -1, -0.1) 
+    - Set the thickness as -0.5mm
+      
+| ![AEDT_Q3D_B.1](Mod-5/Mod-5[Lab-2]/Mod-5.32.png) |
+|:---|
 
-| **Die Geometry** <br> ![AEDT_Q3D_3.1](Mod-5/Mod-5[Lab-2]/Mod-5.13.png) | **Die Thickness** ![AEDT_Q3D_3.2](Mod-5/Mod-5[Lab-2]/Mod-5.15.png) |
-|:---|:---|
-| **Die Material** <br> ![AEDT_Q3D_3.3](Mod-5/Mod-5[Lab-2]/Mod-5.22.png) |  
+| ![AEDT_Q3D_B.2](Mod-5/Mod-5[Lab-2]/Mod-5.31.png) |
+|:---|
 
-  - **Step 4.1 : Create the Substrate Geometry**
-    - Draw another rectangle for the substrate (5mm x 5mm) and position (-1, -1, 0) it such that the die is at the center.
-    - Set the thickness as -500 microns (-0.5mm). Note the negative sign so as to have the substrate lie beneath the die.
-    - Adjust the substrate position along Z-axis to account for the die attach thickness. **Adjusted position: (-1, -1, -0.1)**
+| ![AEDT_Q3D_B.3](Mod-5/Mod-5[Lab-2]/Mod-5.33.png) |  
+|:---|
 
-| **Substrate Geometry** <br> ![AEDT_Q3D_4.1](Mod-5/Mod-5[Lab-2]/Mod-5.32.png) | **Substrate Material** ![AEDT_Q3D_4.2](Mod-5/Mod-5[Lab-2]/Mod-5.31.png) |
-|:---|:---|
-| **Substrate position considering Die attach thickness** <br> ![AEDT_Q3D_4.3](Mod-5/Mod-5[Lab-2]/Mod-5.33.png) |  |
+### 5.C - Adding Die Attach Material and Bond Pads
 
-### 5.3 - Adding Die Attach Material and Bond Pads
-
-  - **Step 5 : Create the Die Attach Material**
+  - **Step C.1: Create the Die Attach Material**
     - Draw a rectangle of the same size as that of the die (3mm x 3mm) and at the same co-ordinates (0, 0, 0).
-    - Set the thickness to -100 microns (-0.1mm) as the DAM lies beneath the die and the substrate
-    - Assign the material to _**Modified Eopxy**_
-    - **NOTE:** Assign different shades/ colours to adjacent components to easily discern in 3D view.
+    - Set the thickness to -0.1mm
+    - Assign the material to "Modified_epoxy"
 
-| **Die Attach Material** <br> ![AEDT_Q3D_5.1](Mod-5/Mod-5[Lab-2]/Mod-5.34.png) | **Geometry** ![AEDT_Q3D_5.2](Mod-5/Mod-5[Lab-2]/Mod-5.36.png) |
-|:---|:---|
-| **Material** <br> ![AEDT_Q3D_5.3](Mod-5/Mod-5[Lab-2]/Mod-5.37.png) | ![AEDT_Q3D_5.3](Mod-5/Mod-5[Lab-2]/Mod-5.41.png) |
+| ![AEDT_Q3D_C.1](Mod-5/Mod-5[Lab-2]/Mod-5.34.png) |
+|:---|
 
-  - **Step 6 : Create Bond pads on Die and Substrate**
-  - Draw a small rectangle and configure its size to to that of the die pad (0.2mm x 0.2mm). We will place the first Die Pad at the co-ordinates (0.2, 0.2, 0.2) so that it sits on top of the die and is at one of the edges.
-  - Set the thickness to 5 microns (0.005mm)
+| ![AEDT_Q3D_C.2](Mod-5/Mod-5[Lab-2]/Mod-5.36.png) |
+|:---|
 
-**Die Bond Pad** <br> ![AEDT_Q3D_6.1](Mod-5/Mod-5[Lab-2]/Mod-5.43.png) | ![AEDT_Q3D_5.3](Mod-5/Mod-5[Lab-2]/Mod-5.45.png) 
+| ![AEDT_Q3D_C.3](Mod-5/Mod-5[Lab-2]/Mod-5.37.png) | 
+|:---|
 
-  - Similarly, draw a small rectangle and configure its size to to that of the substrate bond pad (0.2mm x 0.2mm).
-  - We will place this Substrate Bind Pad at the co-ordinates (0.2, -0.7, -0.1) so that it sits aligned to the Die bond pad created in the previous step, and also on top of the substrate.
-  - Set the substrate bond pad thickness to 10 microns (0.010mm)
+| ![AEDT_Q3D_C.3](Mod-5/Mod-5[Lab-2]/Mod-5.41.png) |
+|:---|
 
- **Substrate Bond Pad** <br> ![AEDT_Q3D_6.2](Mod-5/Mod-5[Lab-2]/Mod-5.44.png) | ![AEDT_Q3D_5.3](Mod-5/Mod-5[Lab-2]/Mod-5.46.png) 
+  - **Step C.2: Create Bond pads on Die and Substrate**
+  - Draw a rectangle of size (0.2mm x 0.2mm) and position (0.2, 0.2, 0.2) 
+  - Set the thickness to 0.005mm
 
-### 5.4 - Wire Bond Creation and Material Assignment
+| ![AEDT_Q3D_C.1](Mod-5/Mod-5[Lab-2]/Mod-5.43.png) |
+|:---|
 
-  - **Step 7 : Create Bond Wires**
-    - Use the **Bondwire tool** under: `Draw -> Bondwire`
-    - Connect the centre of the Die Bond pad to the centre of the Substrate Bond Pad. It might be easier to draw the wires from the Top view orientation.
+| ![AEDT_Q3D_C.3](Mod-5/Mod-5[Lab-2]/Mod-5.45.png) 
+|:---|
+
+  - Draw a rectangle of size (0.2mm x 0.2mm) on the substrate bondpad and position at (0.2, -0.7, -0.1) 
+  - Set the substrate bond pad thickness to 0.01mm
+
+| ![AEDT_Q3D_C.2](Mod-5/Mod-5[Lab-2]/Mod-5.44.png) |
+|:---|
+
+| ![AEDT_Q3D_C.3](Mod-5/Mod-5[Lab-2]/Mod-5.46.png) |
+|:---|
+
+
+### 5.D - Wire Bond Creation and Material Assignment
+
+  - **Step D.1: Create Bond Wires**
+    - Use the Bondwire tool under "Draw"
+    - Connect the centre of the Die Bondpad to the centre of the Substrate Bondpad
     - Select the Bondwire type as JEDEC 4-point
     - Assign gold as the Bondwire material
 
-| **Draw the Bondwire connecting the die & substrate pad centers** <br> ![AEDT_Q3D_7.1](Mod-5/Mod-5[Lab-2]/Mod-5.5.png) | ![AEDT_Q3D_7.2](Mod-5/Mod-5[Lab-2]/Mod-5.52.png) |
-|:---|:---|
-| **Gold Bondwire** <br> ![AEDT_Q3D_7.3](Mod-5/Mod-5[Lab-2]/Mod-5.53.png) |  |
+| ![AEDT_Q3D_D.1](Mod-5/Mod-5[Lab-2]/Mod-5.5.png) |
+|:---|
 
-Now, repeat the steps 6 and 7 to create and connect all the die and substrate bond pads using bondwires.
+| ![AEDT_Q3D_D.2](Mod-5/Mod-5[Lab-2]/Mod-5.52.png) |
+|:---|
 
-### 5.5 - Applying Mold Compound and Finalizing the Package Model
+| ![AEDT_Q3D_D.3](Mod-5/Mod-5[Lab-2]/Mod-5.53.png) |  
+|:---|
 
-  - **Step 8 : Build the mold compound around the die**
-    - Create a rectangular enclosure around the die and wires (5mm x 5mm, 1.2mm thickness)
-    - Position at (-1, -1, -0.1) covering the top side of the substrate.
-    - Set the thickness to 1.2mm so that it covers the die and the bondwires, while also leaving margin for any laser marking processes
 
-| **Mold** <br> ![AEDT_Q3D_8.1](Mod-5/Mod-5[Lab-2]/Mod-5.55.png) | ![AEDT_Q3D_8.2](Mod-5/Mod-5[Lab-2]/Mod-5.56.png) |
-|:---|:---|
-<br> ![AEDT_Q3D_8.1](Mod-5/Mod-5[Lab-2]/Mod-5.57.png) | ![AEDT_Q3D_8.2](Mod-5/Mod-5[Lab-2]/Mod-5.6.png) |
-|:---|:---|
-<br> ![AEDT_Q3D_8.1](Mod-5/Mod-5[Lab-2]/Mod-5.61.png) | ![AEDT_Q3D_8.2](Mod-5/Mod-5[Lab-2]/Mod-5.62.png) |
-|:---|:---|
-<br> ![AEDT_Q3D_8.1](Mod-5/Mod-5[Lab-2]/Mod-5.63.png) | 
+### 5.E - Applying Mold Compound and Finalizing the Package Model
+
+  - **Step E.1: Build the mold compound**
+    - Create a rectangule around the substrate (5mm x 5mm, 1.2mm thickness) and position at (-1, -1, -0.1) 
+
+|![AEDT_Q3D_E.1](Mod-5/Mod-5[Lab-2]/Mod-5.55.png) | 
+|:---|
+
+![AEDT_Q3D_E.2](Mod-5/Mod-5[Lab-2]/Mod-5.56.png) |
+|:---|
+
+| ![AEDT_Q3D_E.1](Mod-5/Mod-5[Lab-2]/Mod-5.57.png) | 
+|:---|
+
+|![AEDT_Q3D_E.2](Mod-5/Mod-5[Lab-2]/Mod-5.6.png) |
+|:---|
+
+|![AEDT_Q3D_E.1](Mod-5/Mod-5[Lab-2]/Mod-5.61.png) | 
+|:---|
+
+|![AEDT_Q3D_E.2](Mod-5/Mod-5[Lab-2]/Mod-5.62.png) |
+|:---|
+
+|![AEDT_Q3D_E.1](Mod-5/Mod-5[Lab-2]/Mod-5.63.png) | 
+|:---|
 
 _________________________________________________________________________________________________________  
