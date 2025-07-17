@@ -694,7 +694,6 @@ Integrated Circuits are tested at multiple points during the manufacturing proce
 |                           | **Package Manufacturing**: <br> - Fine-tune assembly process (die attach, wire bond loop, mold flow) <br> - Assemble packages using cleanroom protocols |
 |                           | **Package Testing**: <br> - Perform electrical testing for logic, analog, power specs <br> - Use automated test equipment (ATE) with test handlers <br> - Conduct burn-in to detect early-life failures |
 |                           | **System-Level Testing (SLT)**: <br> - Place packaged chips in real systems (e.g., smartphones) <br> - Test boot-up, connectivity, performance under stress <br> - Detect latent defects not found in earlier tests |
-| **Cross-Cutting Functions** | **Diagnosis & Failure Analysis**: <br> - SEM imaging, X-ray, and electrical analysis <br> - Identify root causes of failures <br> - Feedback to foundry and OSAT for continuous improvement |
 
 
 | ![Package_Testing_1](Mod-4/Mod-4/Mod-4.2.png) | 
