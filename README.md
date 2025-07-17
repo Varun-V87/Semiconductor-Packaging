@@ -311,18 +311,103 @@ This section covers the semiconductor supply chain and provides a detailed look 
 
 ### 2.1 - Setting The Stage - Supply Chain And Facilities
 #### 2.1.1 - Semiconductor Supply Chain Overview
-The semiconductor supply chain is a multi-step process that turns raw silicon into complete electronic products. The main steps are:
-
-| Semiconductor Supply Chain Overview |
-|:---|
-| **1. Design : Chip design and verification** <br> <ul> <li>**Input** : Product requirements specification, EDA tools, Foundry PDKs, IPs</li> <li>**Output** : GDSII layout file is _taped out_ to the foundry for mask creation and wafer fabrication. Test programs are also provided by the Design house for Wafer and Package level testing.</li> <li>Examples: Nvidia, AMD, MediaTek, Intel, TI, Apple, ARM etc.</li> </ul> |
-| **2. Wafer Fabrication (Foundry) : Physical ICs are manufactured onto wafers using photolithography and other processes** <br> <ul> <li> **Input** : GDSII layout, Silicon wafers, Equipment, Gases, chemicals, Materials</li> <li> **Output**: Processed wafers with patterned dies</li> <li> Examples: TSMC, Samsung, Intel, GlobalFoundries</li> </ul> |
-| **3. Packaging Assembly & Test : ICs are cut (diced), bonded, encapsulated, and tested** <br> <ul> <li>**Input**: Test programs, Singulated dies, substrate materials (e.g., ABF, BT resin), solder bumps</li> <li> **Output**: Packaged IC (e.g., BGA, QFN, FCBGA, 2.5D/3D)</li> <li> Examples: ASE, Amkor, JCET, Shinko, Ibiden</li> </ul> |
-| **4. Board Assembly & Test : Multiple packaged ICs are mounted and board-level validation** <br> <ul> <li>**Input**: Packaged ICs, test programs, ATE systems</li> **Output**: Qualified ICs, binned by performance. Yield improvement and binning are critical for profitability.</li> <li> Examples: ASE, Powertech, Amkor, UTAC</li> </ul> |
-| **5. System Integration & Distribution** <br> <ul> <li>**Input**: Packaged, tested ICs; PCBs; passive components </li> <li> **Process**: SMT assembly, system-level integration, validation </li> <li>**Output**: Complete electronic systems (e.g., smartphones, servers) </li> <li>Examples: OEMs Original Equipment Manufacturer (Apple, Cisco), ODMs Original Design Manufacturer (Foxconn, Pegatron), EMS Electronics Manufacturing Services (Flex, Jabil)</li> </ul> |
 
 | ![Semiconductor_Supply_Chain](Mod-2/Mod-2/Mod-2.1.png) |
 |:---|
+
+**1. Design House Stage:**
+- It is responsible for turning concepts into manufacturable digital architectures.
+
+A. Core Functions:
+- Develop digital blueprints for ICs using **EDA (Electronic Design Automation)** tools.
+- Incorporate physical design kits (**PDKs**) from foundries to ensure compatibility with manufacturing rules.
+- Produce the **GDSII (Graphic Data System II)** layout file, which represents the geometric patterns used to etch transistors and interconnects on silicon.
+
+B. Outputs:
+- Verified IC design files
+- Associated test program specifications
+- Design constraints optimized for performance, power, and area (PPA)
+
+This stage is entirely virtual but foundational. It determines the capabilities and commercial competitiveness of the chip. The output sets the stage for wafer fabrication.
+
+---
+
+**2. Wafer Fabrication Stage:**
+
+Once the digital design is finalized, it moves to **wafer fabrication**, conducted by semiconductor foundries such as **TSMC**, **Samsung**, or **Intel**.
+
+A. Raw Inputs:
+- **Silicon wafers**: Pure monocrystalline discs that form the physical base of ICs.
+- **Process gases and chemicals**: Used for etching, doping, and deposition.
+- **Photolithography equipment**: For pattern projection using EUV or DUV light.
+
+B. Core Processes:
+- Photolithography
+- Etching
+- Ion implantation
+- Deposition
+- Chemical mechanical polishing (CMP)
+
+C. Output:
+- Processed silicon wafers with densely packed dies
+- Test markers and alignment keys for downstream inspection
+
+Fabrication often spans hundreds of steps over several weeks, building transistors layer by layer at nanometer scales.
+
+---
+
+**3. Package Assembly & Test Stage:**
+Dies are cut (singulated) from wafers and transitioned to **packaging and electrical testing**.
+
+A. Materials Utilized:
+- Substrates (organic/ceramic)
+- Epoxy molding compounds
+- Wire bonding or flip-chip interconnects
+- Lids or heat spreaders
+
+B. Assembly Functions:
+- Attaching the die to the substrate
+- Routing signals via wire bonds or solder bumps
+- Encapsulation using mold compound
+- Electrical testing using automated handlers
+
+C. Output:
+- Fully packaged and electrically validated dies
+- Marked components (e.g., labeled “A15” for Apple’s processor)
+
+The packaging step ensures both **protection** and **connectivity**, effectively giving the chip a body.
+
+---
+
+**4. Board Assembly & Test Stage:**
+Packaged dies are mounted onto **printed circuit boards (PCBs)**, forming functional platforms.
+
+A. Materials & Tools:
+- Multi-layer PCBs
+- Solder paste and reflow ovens
+- Placement robots
+
+B. Key Activities:
+- Surface-mount technology (SMT) placement
+- Reflow soldering
+- Functional and in-circuit testing
+
+This phase integrates discrete functions into unified systems such as smartphones, wearables, or compute modules.
+
+---
+**5. Product Assembly & Test Stage:**
+The final destination is **product-level integration**, where fully assembled boards are placed into physical enclosures and subjected to rigorous testing.
+
+A. Components Used:
+- Mechanical housing
+- Display, battery, camera module, input sensors
+- Antennas and structural adhesives
+
+B. Testing Protocols:
+- Burn-in testing
+- Environmental stress screening
+- Final software flashing and validation
+---
 
 #### 2.1.2 - Introduction to a Package Manufacturing Unit (ATMP)
 The ATMP process involves four core activities: Assembly, Testing, Marking, and Packaging.
@@ -331,114 +416,131 @@ The ATMPs could be OSATs (like ASE, Amkor, TATA etc.) or in-house ATMPs of IDMs 
 | **Typical layout of an ATMP:** <br> ![Typical_ATMP_Layout](Mod-2/Mod-2/Mod-2.2.png) |
 |:---|
 
-**1. Material Preparation and Storage:**
-- Handling and storing incoming materials such as wafers, substrates, leadframes, mold compounds, and consumables.
+## ATMP Facility Layout:
 
-**2. Processing Zone (Clean Room: ISO Class 6 & 7)**
-- Main operations include:
-  - Die attach and mount
-  - Wire bonding or flip-chip bonding
-  - RDL (Redistribution Layer) formation
-  - Encapsulation or molding
-  - Testing Area
+| **Zone**                  | **Function & Activities**                                                                                     |
+|--------------------------|--------------------------------------------------------------------------------------------------------------|
+| **Offices**            | - Engineering process control and diagnostics  <br> - Management & production scheduling <br> - Quality assurance (defect tracking, compliance) <br> - Includes conference rooms, design review areas, secure IT systems |
+| **Material Preparation & Storage** | - Receives dies, substrates, leadframes, packaging materials <br> - Staging for traceability & workflow <br> - Moisture Sensitivity Level (MSL) management <br> - ESD-safe, temperature/humidity controlled storage |
+| **Processing Zone (Cleanroom – ISO Class 6 & 7)** | - Core packaging operations: <br>   - Die attach (epoxy or solder bonding) <br>   - Wire bonding (gold, copper, aluminum wires) <br>   - Flip-chip interconnect <br>   - Encapsulation & molding <br>   - Redistribution Layer (RDL) creation <br> - Uses bonder heads, vacuum ovens, plasma tools |
+| **Testing Area**       | - Electrical testing via Automated Test Equipment (ATE) <br> - Burn-in stress testing (high temp/voltage) <br> - Reliability chambers for thermal cycling, humidity, vibration <br> - Custom test setups for product families |
+| **Warehouse**          | - Stores packaged ICs ready for shipping <br> - Manages spare parts, substrates, labels <br> - Segregates good, reject, and rework lots <br> - Climate controlled for sensitive devices |
+| **Utility & Maintenance Room** | - Supports facility infrastructure <br> - HVAC & cleanroom airflow control <br> - DI water systems for cleaning <br> - Maintenance tools, spare modules <br> - Emergency backup & safety systems |
 
-**3. Performing:**
-- Electrical tests
-- Burn-in tests
-- Reliability and environmental chamber testing
 
-**4. Warehouse:**
-- Storage and inventory management of packaged ICs
 
 ### 2.2 - Wafer Pre-Preparation - Grinding And Dicing
-
-This section explains the wafer preparation process inside an ISO Class 7 cleanroom of an ATMP (Assembly, Testing, Marking, and Packaging) facility. 
 
 | ![Wafer_Grinding_Dicing](Mod-2/Mod-2/Mod-2.3.png) |
 |:---|
 
-**1. Incoming Wafer Carrier:** Wafers arrive in protective carriers to prevent contamination before processing.
+## Cleanroom Process Flow - Wafer Preparation Steps
 
-**2. Wafer Inspection:** Visual and optical checks are done to detect surface defects, contamination, or damage.
+**1. Incoming Wafer Carrier:**
+- Wafers arrive stacked inside **protective carriers** designed to prevent contamination and mechanical damage.
+- Carriers maintain electrostatic discharge (ESD) safety, and are classified for cleanroom ingress protocols.
+- Often made from high-grade polymers with compartments for 25 wafers per lot.
 
-**3. Wafer Front Tape Lamination:** A protective tape is applied to the wafer’s front side to safeguard the devices during grinding and dicing.
+---
+**2. Wafer Inspection:**
+- Initial **visual and automated inspection** is performed to screen for defects such as:
+  - Scratches
+  - Warping
+  - Residue from prior processes
+- Systems may use optical microscopes or machine vision algorithms to detect surface anomalies.
+- Defective wafers are flagged for rework or rejected to avoid yield impact downstream.
 
-**4. Wafer Backside Grinding:** The wafer’s backside is thinned from about 700μm to 200μm to improve thermal performance and enable flexible packaging.
+---
+**3. Wafer Front Tape Lamination:**
+- A specialized adhesive **protective tape** is applied to the front (active) surface of the wafer.
+- Purpose:
+  - Shields the active layer during backside grinding and handling
+  - Prevents debris contamination and surface cracking
+- Lamination performed with uniform tension and bubble-free adhesion using rollers or lamination chambers.
+- Tape materials include UV-curable polymer films that allow safe removal post-dicing.
 
-**5. Tape Frame Mounting to Wafer Backside:** The thinned wafer is attached to a ring frame using adhesive tape to stabilize it and hold the individual dies in place during dicing.
+---
+**4. Wafer Backside Grinding:**
+- The wafer’s **backside is ground** to reduce thickness, which:
+  - Facilitates die placement in compact packages
+  - Improves thermal management in stacked packages
+- Tool configuration:
+  - High-speed **rotating spindle**
+  - **Grinding wheel** designed for low-damage planarization
+- Thickness reduction typically ranges from hundreds to tens of microns with submicron control.
 
-**6. Two-step Wafer Dicing (Laser Grooving + Blade Dicing):** <br>
-    -  **Laser Grooving:** Precision laser cuts grooves along scribe lines to weaken the wafer structure. <br>
-    -  **Blade Dicing:** A high-precision blade is then used to physically dice the wafer into individual dies or chips. <br>
+---
+**5. Mounting to Tape Frame (Backside):**
+- Ground wafer is mounted onto a **tape frame** that:
+  - Provides mechanical support during dicing
+  - Holds the wafer taut to enable precise cutting
+- Tape is stretched over a metal ring frame and the wafer is aligned using fiducial markers.
+- UV-sensitive or thermal-release adhesive tapes are used for easy die pickup after singulation.
+
+---
+**6. Two-Step Wafer Dicing:**
+A hybrid approach that maximizes accuracy and throughput:
+
+ **A. Laser Grooving:**
+- Prepares the wafer by forming **microtrenches** at die-separation boundaries.
+- Minimizes chipping and creates predictable fracture lines.
+- Laser wavelength and focus tuned to silicon depth and material reflectivity.
+
+ **B. Blade Dicing:**
+- Mechanical blade slicing completes the die separation process.
+- Blades move precisely along the grooved paths created earlier.
+- Die debris is managed via cooling fluid or vacuum suction systems.
+- Final diced units remain adhered to the tape frame for downstream inspection and packaging.
+---
+
+# Cleanroom Protocols
+- All processes occur in **ISO Class 6 and 7 cleanrooms**, with stringent particle control.
+- Operators wear full bunny suits and gloves to ensure zero contamination.
+- Equipment includes HEPA-filtered laminar flow stations and ESD-safe tools.
+
+---
 
 ### 2.3 - Wire Bond Packaging - Die Attach To Molding
 
 | ![Wire_Bond_Packaging](Mod-2/Mod-2/Mod-2.4.png) |
 |:---|
 
-**1. Die Attach:**
-- The individual die is attached to a substrate or lead frame using epoxy.
-- Epoxy dispensing is done in a specific pattern to minimize voids (balancing pattern complexity with processing speed).
-- The die is picked up by a pick-up head and placed onto the Die Attach Film (DAF).
+## Cleanroom Packaging Process - Wire Bond Package Flow
+The table is outlining the cleanroom packaging workflow for wire bond semiconductor devices. This process includes key operations from die attach to final molding.
 
-**2. Curing:**
-- The assembly is heated to cure the epoxy, ensuring a strong, stable bond between the die and the substrate.
+---
+|  Step                         |  Description                                                                                                                     |
+|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| **Wire Bond Package Overview** | A cross-sectional illustration of a wire bond package structure, showing:<br> - Mold compound for protection<br> - Die (IC chip)<br> - Substrate for mechanical and electrical support |
+| **Die Attach**                 | Performed in three stages:<br> - **Epoxy Dispense**: Automated dispensing of adhesive onto the substrate<br> - **Pick the Die**: The die is selected and aligned by the pick tool<br> - **Placement**: The die is positioned onto the substrate where adhesive has been applied |
+| **Curing**                     | Post die-attach thermal treatment:<br> - Ensures epoxy hardening and strong adhesion<br> - Typically involves baking the wafer at specific temperatures over defined durations |
+| **Wire Bonding**               | Multi-step interconnection process between die pads and substrate:<br> - **Wire Clamp**: Secures wire in place<br> - **Capillary Tip**: Guides wire positioning<br> - **EFO Spark**: Forms Free Air Ball (FAB) using electrical discharge<br> -  **Ball Bond**: Bond formed using ultrasound and pressure<br> - **Wire Loop Formation**: Shapes wire arc to target pad<br> - **Crescent Bond**: Final termination at substrate<br> - **Ultrasound + Force**: Mechanical + acoustic energy secures bond |
+| **Singulation**                | Wafer or panel is diced into individual units:<br> - A rotating **dicing blade** cuts across scribe lines<br> - Minimizes mechanical damage and maintains die integrity |
+| **Marking (Laser)**            | Unique identification via laser etching:<br> - Adds serial numbers, batch IDs, or logos<br> - Uses controlled laser power and optics to avoid surface degradation |
+| **Molding (Transfer Molding)**| Final encapsulation process:<br> - Mold compound (epoxy-based resin) is injected around the wire bond structure<br> - Protects the die from mechanical, chemical, and thermal stress<br> - Executed using precision molds and transfer presses |
 
-**3. Wire Bonding:**
-Gold or aluminum wires are bonded between the die and the substrate pads using thermal and ultrasonic energy.
-- Steps include:
-  - Forming a ball bond using an EFO (Electronic Flame-Off) spark
-  - Bonding the ball to the die pad (using pressure, vibration, and heat)
-  - Creating a wire loop
-  - Forming a crescent bond on the substrate side
-
-**4. Molding (Transfer Molding):**
-- A mold compound is injected to fully encapsulate the die and wires, protecting the package from environmental damage and mechanical stress.
-
-**5. Marking (Laser):**
-- Laser marking is used to engrave product information, logos, or batch numbers onto the package surface.
-
-**6. Singulation (Dicing Blade):**
-- The molded wafer is cut into individual ICs using a dicing blade. A thin blade is used to reduce chipping and improve cutting precision.
-
+---
 
 ### 2.4 - Flip Chip Assembly - Bump Formation And Underfill
-
 Flip chip packaging enhances electrical performance and I/O density by mounting the die face-down on the substrate.
 
 | ![FlipChip_Packaging](Mod-2/Mod-2/Mod-2.5.png) |
 |:---|
 
-**1. Bump Formation on Silicon (Si):**
-- Solder bumps are formed on the die.
-- The bumps are reflowed to create strong electrical and mechanical connections.
+| **Step**                 | **Description**                                                                                          |
+|-------------------------|----------------------------------------------------------------------------------------------------------|
+| **Bump Formation**     | - Create solder bumps on die pads via electroplating or screen printing <br> - Pre-reflow forms uniform hemispherical bumps |
+| **Die Flipping**       | - Invert the die so solder bumps face the substrate <br> - Reduces parasitic inductance and improves thermal paths |
+| **Flux Dispensing**    | - Apply flux to substrate pads <br> - Removes oxidation, promotes solder wetting, and prevents voids |
+| **Chip Placement**     | - Use vision alignment systems for precise die placement <br> - Ensure micrometer-level accuracy |
+| **Solder Reflow**      | - Heat in a reflow oven to melt solder bumps <br> - Forms strong metallurgical joints with substrate |
+| **Flux Cleaning**      | - Remove residual flux using solvents or ultrasonic cleaning <br> - Prevents corrosion and electrical shorts |
+| **Underfill Dispensing** | - Dispense underfill material to fill die-substrate gaps <br> - Enhances mechanical integrity and stress distribution |
+| **Underfill Curing**   | - Thermally cure underfill to solidify and secure adhesion <br> - Prepares the package for thermal cycling |
+| **Molding**            | - Encapsulate the die with mold compound via transfer molding <br> - Protects against environmental factors |
+| **Marking**           | - Apply batch codes, logos, or identifiers via laser or ink marking <br> - Ensures product traceability |
 
-**2. Chip Flip and Placement:**
-- The chip is flipped upside down.
-- Flux is applied to the substrate to help with solder wetting.
-- The solder bumps are aligned with the substrate’s bond pads.
 
-**3. Solder Reflow:**
-- The chip is heated so the solder melts and bonds to the substrate.
-
-**4. Flux Cleansing:**
-- Residual flux is cleaned using solvent spray to prevent corrosion.
-
-**5. Underfill Dispensing:**
-- Underfill material is applied to fill the gap between the die and substrate, improving mechanical strength and thermal performance.
-
-**6. Underfill Cure:**
-- The assembly is heated to cure the underfill.
-
-**7. Molding:**
-- A protective mold compound is applied to encapsulate the package.
-
-**8. Marking:**
-- Laser marking is done for part identification, traceability, and manufacturing information.
-
-**9. Ball Mounting and Reflow:**
-- Solder balls are mounted onto the substrate.
-- A final reflow process ensures they are properly attached.
 
 ### 2.5 - Wafer Level Packaging And Conclusion
 
@@ -452,18 +554,14 @@ There are two main types of WLP:
 | ![WLP](Mod-2/Mod-2/Mod-2.6.png) |
 |:---|
 
-**1. Reconstitution Process:**
-- Diced Wafer is taken <br>
-- From this, only the known-good dies are picked and placed onto a temporary carrier. <br>
-- Molding to form a single reconstituted wafer after releasing the carrier. <br>
+## 🧪 Fan-Out Wafer-Level Packaging — Cleanroom Process Flow
 
-**2. RDL (Redistribution Layer) Preparation**:
-- Dielectric & Metal are layers are deposited on to the reconstituted wafer and patterned. <br>
-- Multiple such RDL layers are patterned to form the final RDL, similar to the metallization stages in FEOL/ CMOS facbrication <br>
-
-**3. Solder Ball Attach**: Solder Balls are mounted on the final RDL pads to enable surface mounting. <br>
-
-**4. Final Laser Marking and Singulation**: Each packaged die is marked and the reconstituted wafer is diced (singulated) into individual packages.
+| **Process Step**            | **Description**                                                                                          |
+|-----------------------------|----------------------------------------------------------------------------------------------------------|
+| **Wafer-Level Package Structure** | - **Solder Balls**: Interface to PCB/system board <br> - **Redistribution Layer (RDL)**: Routes I/O from die to ball grid <br> - **Epoxy Molding Compound (EMC)**: Encapsulates the die <br> - **Silicon Chip**: Active electronic component embedded in mold |
+| **Die Reconstitution Flow** | - **Die Singulation**: Wafer is diced into known-good dies <br> - **Pick & Place**: Dies are spaced and placed on a temporary carrier <br> - **Molding Process**: EMC encapsulates the dies to form a reconstituted wafer; temporary carrier is removed |
+| **Redistribution Layer (RDL) Process** | - **Dielectric & Metal Coating**: Polymer dielectric and metal seed layer deposition <br> - **1st RDL Patterning**: Photolithography and etching for initial traces <br> - **Intermediate Dielectric Coating**: Insulation between RDL layers <br> - **2nd RDL Patterning**: Adds power/ground routing <br> - **3rd RDL Patterning**: Final layer aligns to solder ball pads |
+| **Solder Ball Attach**    | - Align and place solder balls on fan-out pads <br> - Reflow process creates metallurgical connections <br> - Inspection ensures coplanarity, joint integrity, and electrical continuity |
 
 _________________________________________________________________________________________________________  
 
