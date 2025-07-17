@@ -583,7 +583,7 @@ The main focus of this lab exercise is to build the complete cross-section of a 
 
   - **Step 1 : Launch AEDT and select Q3D (or Icepak, Maxwell 3D)**
 
-| ![AEDT_Q3D_1](./docs/images/Lab2_PackageModeling_1.png) |
+| ![AEDT_Q3D_1](Mod-5/Mod-5[Lab-2]/Mod-5.0.png) |
 |:---|
 
 ### 5.2 - Creating the Die and Substrate in AEDT
@@ -591,9 +591,6 @@ The main focus of this lab exercise is to build the complete cross-section of a 
   - **Step 2 : Define the working unit**
     - `Modeler -> Units...`
     - Choose **mm** or **um** as the working unit for creating the model.
-
-| Set working Units <br> ![AEDT_Q3D_2.1](./docs/images/Lab2_PackageModeling_2.1.png) | ![AEDT_Q3D_2.2](./docs/images/Lab2_PackageModeling_2.2.png) |
-|:---|:---|
 
   - **Step 3.1 : Create the Die Geometry**
     - Select the rectangle tool from the ribbon or using the Menus (`Draw -> Rectangle`) to draw a rectangle
@@ -606,18 +603,18 @@ The main focus of this lab exercise is to build the complete cross-section of a 
     - Rename the geometry to **Die**
     - Choose **Silicon** as the material from the Material Library.
 
-| **Die Geometry** <br> ![AEDT_Q3D_3.1](./docs/images/Lab2_PackageModeling_3.1.png) | **Die Thickness** ![AEDT_Q3D_3.2](./docs/images/Lab2_PackageModeling_3.2.png) |
+| **Die Geometry** <br> ![AEDT_Q3D_3.1](Mod-5/Mod-5[Lab-2]/Mod-5.13.png) | **Die Thickness** ![AEDT_Q3D_3.2](Mod-5/Mod-5[Lab-2]/Mod-5.15.png) |
 |:---|:---|
-| **Die Material** <br> ![AEDT_Q3D_3.3](./docs/images/Lab2_PackageModeling_3.3.png) |  |
+| **Die Material** <br> ![AEDT_Q3D_3.3](Mod-5/Mod-5[Lab-2]/Mod-5.22.png) |  
 
   - **Step 4.1 : Create the Substrate Geometry**
     - Draw another rectangle for the substrate (5mm x 5mm) and position (-1, -1, 0) it such that the die is at the center.
     - Set the thickness as -500 microns (-0.5mm). Note the negative sign so as to have the substrate lie beneath the die.
     - Adjust the substrate position along Z-axis to account for the die attach thickness. **Adjusted position: (-1, -1, -0.1)**
 
-| **Substrate Geometry** <br> ![AEDT_Q3D_4.1](./docs/images/Lab2_PackageModeling_4.1.png) | **Substrate Material** ![AEDT_Q3D_4.2](./docs/images/Lab2_PackageModeling_4.2.png) |
+| **Substrate Geometry** <br> ![AEDT_Q3D_4.1](Mod-5/Mod-5[Lab-2]/Mod-5.32.png) | **Substrate Material** ![AEDT_Q3D_4.2](Mod-5/Mod-5[Lab-2]/Mod-5.31.png) |
 |:---|:---|
-| **Substrate position considering Die attach thickness** <br> ![AEDT_Q3D_4.3](./docs/images/Lab2_PackageModeling_4.3.png) |  |
+| **Substrate position considering Die attach thickness** <br> ![AEDT_Q3D_4.3](Mod-5/Mod-5[Lab-2]/Mod-5.33.png) |  |
 
 ### 5.3 - Adding Die Attach Material and Bond Pads
 
@@ -627,22 +624,22 @@ The main focus of this lab exercise is to build the complete cross-section of a 
     - Assign the material to _**Modified Eopxy**_
     - **NOTE:** Assign different shades/ colours to adjacent components to easily discern in 3D view.
 
-| **Die Attach Material** <br> ![AEDT_Q3D_5.1](./docs/images/Lab2_PackageModeling_5.1.png) | **Geometry** ![AEDT_Q3D_5.2](./docs/images/Lab2_PackageModeling_5.2.png) |
+| **Die Attach Material** <br> ![AEDT_Q3D_5.1](Mod-5/Mod-5[Lab-2]/Mod-5.34.png) | **Geometry** ![AEDT_Q3D_5.2](Mod-5/Mod-5[Lab-2]/Mod-5.36.png) |
 |:---|:---|
-| **Material** <br> ![AEDT_Q3D_5.3](./docs/images/Lab2_PackageModeling_5.3.png) |  |
+| **Material** <br> ![AEDT_Q3D_5.3](Mod-5/Mod-5[Lab-2]/Mod-5.37.png) | ![AEDT_Q3D_5.3](Mod-5/Mod-5[Lab-2]/Mod-5.41.png) |
 
   - **Step 6 : Create Bond pads on Die and Substrate**
   - Draw a small rectangle and configure its size to to that of the die pad (0.2mm x 0.2mm). We will place the first Die Pad at the co-ordinates (0.2, 0.2, 0.2) so that it sits on top of the die and is at one of the edges.
   - Set the thickness to 5 microns (0.005mm)
 
-| **Die Bond Pad** <br> ![AEDT_Q3D_6.1](./docs/images/Lab2_PackageModeling_6.1.png) |
+| **Die Bond Pad** <br> ![AEDT_Q3D_6.1](Mod-5/Mod-5[Lab-2]/Mod-5.43.png) | ![AEDT_Q3D_5.3](Mod-5/Mod-5[Lab-2]/Mod-5.45.png) |
 |:---|
 
   - Similarly, draw a small rectangle and configure its size to to that of the substrate bond pad (0.2mm x 0.2mm).
   - We will place this Substrate Bind Pad at the co-ordinates (0.2, -0.7, -0.1) so that it sits aligned to the Die bond pad created in the previous step, and also on top of the substrate.
   - Set the substrate bond pad thickness to 10 microns (0.010mm)
 
-| **Substrate Bond Pad** <br> ![AEDT_Q3D_6.2](./docs/images/Lab2_PackageModeling_6.2.png) |
+| **Substrate Bond Pad** <br> ![AEDT_Q3D_6.2](Mod-5/Mod-5[Lab-2]/Mod-5.44.png) | ![AEDT_Q3D_5.3](Mod-5/Mod-5[Lab-2]/Mod-5.46.png) |
 |:---|
 
 ### 5.4 - Wire Bond Creation and Material Assignment
@@ -653,9 +650,9 @@ The main focus of this lab exercise is to build the complete cross-section of a 
     - Select the Bondwire type as JEDEC 4-point
     - Assign gold as the Bondwire material
 
-| **Draw the Bondwire connecting the die & substrate pad centers** <br> ![AEDT_Q3D_7.1](./docs/images/Lab2_PackageModeling_7.1.png) | ![AEDT_Q3D_7.2](./docs/images/Lab2_PackageModeling_7.2.png) |
+| **Draw the Bondwire connecting the die & substrate pad centers** <br> ![AEDT_Q3D_7.1](Mod-5/Mod-5[Lab-2]/Mod-5.5.png) | ![AEDT_Q3D_7.2](Mod-5/Mod-5[Lab-2]/Mod-5.52.png) |
 |:---|:---|
-| **Gold Bondwire** <br> ![AEDT_Q3D_7.3](./docs/images/Lab2_PackageModeling_7.3.png) |  |
+| **Gold Bondwire** <br> ![AEDT_Q3D_7.3](Mod-5/Mod-5[Lab-2]/Mod-5.53.png) |  |
 
 Now, repeat the steps 6 and 7 to create and connect all the die and substrate bond pads using bondwires.
 
@@ -666,7 +663,12 @@ Now, repeat the steps 6 and 7 to create and connect all the die and substrate bo
     - Position at (-1, -1, -0.1) covering the top side of the substrate.
     - Set the thickness to 1.2mm so that it covers the die and the bondwires, while also leaving margin for any laser marking processes
 
-| **Mold** <br> ![AEDT_Q3D_8.1](./docs/images/Lab2_PackageModeling_8.1.png) | ![AEDT_Q3D_8.2](./docs/images/Lab2_PackageModeling_8.2.png) |
+| **Mold** <br> ![AEDT_Q3D_8.1](Mod-5/Mod-5[Lab-2]/Mod-5.55.png) | ![AEDT_Q3D_8.2](Mod-5/Mod-5[Lab-2]/Mod-5.56.png) |
 |:---|:---|
+<br> ![AEDT_Q3D_8.1](Mod-5/Mod-5[Lab-2]/Mod-5.57.png) | ![AEDT_Q3D_8.2](Mod-5/Mod-5[Lab-2]/Mod-5.6.png) |
+|:---|:---|
+<br> ![AEDT_Q3D_8.1](Mod-5/Mod-5[Lab-2]/Mod-5.61.png) | ![AEDT_Q3D_8.2](Mod-5/Mod-5[Lab-2]/Mod-5.62.png) |
+|:---|:---|
+<br> ![AEDT_Q3D_8.1](Mod-5/Mod-5[Lab-2]/Mod-5.63.png) | 
 
 _________________________________________________________________________________________________________  
